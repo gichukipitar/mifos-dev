@@ -37,6 +37,8 @@ dependencies {
 	implementation group: 'io.swagger.core.v3', name: 'swagger-annotations', version: '2.2.22'
 	// https://mvnrepository.com/artifact/edu.umd.cs.findbugs/findbugs
 	implementation group: 'edu.umd.cs.findbugs', name: 'findbugs', version: '1.3.9'
+// https://mvnrepository.com/artifact/org.apache.commons/commons-lang3
+	implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.0'
 
 	implementation 'com.google.code.gson:gson:2.11.0'
 	compileOnly 'org.projectlombok:lombok'

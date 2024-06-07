@@ -1,7 +1,11 @@
 package com.fineract.mifos.core.infrastructure.core.api;
 
+import com.fineract.mifos.core.infrastructure.core.domain.ExternalId;
 import com.fineract.mifos.core.infrastructure.core.serialization.FromJsonHelper;
 import com.fineract.mifos.core.infrastructure.core.service.MathUtil;
+import com.fineract.mifos.core.infrastructure.security.dto.BasicPasswordEncodablePlatformUser;
+import com.fineract.mifos.core.infrastructure.security.service.PlatformPasswordEncoder;
+import com.fineract.mifos.core.infrastructure.security.service.PlatformUser;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.reflect.TypeToken;
@@ -15,6 +19,9 @@ import java.time.MonthDay;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.TemporalAccessor;
 import java.util.*;
+
+import org.apache.commons.lang3.ObjectUtils;
+import org.apache.commons.lang3.StringUtils;
 
 /**
  * Immutable representation of a command.
