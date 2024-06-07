@@ -5,14 +5,14 @@ import com.google.gson.GsonBuilder;
 import org.springframework.stereotype.Component;
 
 @Component
-public final class ExcludeNothingWithPrettyPrintingOffJsonSerializerGoogleGson {
+public final class CommandProcessingResultJsonSerializer {
 
     private final Gson gson;
 
-    public ExcludeNothingWithPrettyPrintingOffJsonSerializerGoogleGson() {
+    public CommandProcessingResultJsonSerializer() {
         final GsonBuilder builder = new GsonBuilder();
         GoogleGsonSerializerHelper.registerTypeAdapters(builder);
-
+        builder.serializeNulls();
         this.gson = builder.create();
     }
 
