@@ -34,7 +34,7 @@ public class AccrualAccountingApiResource {
     @Operation(summary = "Executes Periodic Accrual Accounting", description = "Mandatory Fields: tillDate")
     @ApiResponses({ @ApiResponse(responseCode = "200", description = "OK") })
 
-    public String executePeriodicAccrualAccounting(@RequestBody(required = true) @io.swagger.v3.oas.annotations.parameters.RequestBody(content = @Content(schema = @Schema(implementation = AccrualAccountingApiResourceSwagger.PostRunaccrualsRequest.class))) String jsonRequestBody) {
+    public String executePeriodicAccrualAccounting(@io.swagger.v3.oas.annotations.parameters.RequestBody(content = @Content(schema = @Schema(implementation = AccrualAccountingApiResourceSwagger.PostRunaccrualsRequest.class))) String jsonRequestBody) {
 
         CommandWrapper commandRequest = new CommandWrapperBuilder().excuteAccrualAccounting().withJson(jsonRequestBody).build();
         CommandProcessingResult result = commandsSourceWritePlatformService.logCommandSource(commandRequest);
