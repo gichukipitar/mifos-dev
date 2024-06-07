@@ -1,5 +1,6 @@
 package com.fineract.mifos.accounting.accrual.controller;
 
+import com.fineract.mifos.core.commands.service.PortfolioCommandSourceWritePlatformService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,5 +14,6 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 @Tag(name = "Periodic Accrual Accounting", description = "Periodic Accrual is to accrue the loan income till the specific date or till batch job scheduled time.\n")
 
 public class AccrualAccountingApiResource {
+    private final PortfolioCommandSourceWritePlatformService commandsSourceWritePlatformService;
 
 }
