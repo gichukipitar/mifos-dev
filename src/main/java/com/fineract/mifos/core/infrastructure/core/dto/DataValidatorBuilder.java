@@ -1,5 +1,6 @@
 package com.fineract.mifos.core.infrastructure.core.dto;
 
+import com.fineract.mifos.core.infrastructure.core.exception.PlatformApiDataValidationException;
 import com.google.gson.JsonArray;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.util.ObjectUtils;

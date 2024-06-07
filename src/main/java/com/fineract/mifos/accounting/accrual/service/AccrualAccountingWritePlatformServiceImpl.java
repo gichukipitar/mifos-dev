@@ -5,6 +5,7 @@ import com.fineract.mifos.core.infrastructure.core.api.JsonCommand;
 import com.fineract.mifos.core.infrastructure.core.data.CommandProcessingResult;
 import com.fineract.mifos.core.infrastructure.core.dto.ApiParameterError;
 import com.fineract.mifos.core.infrastructure.core.dto.DataValidatorBuilder;
+import com.fineract.mifos.core.infrastructure.core.exception.MultiException;
 import com.fineract.mifos.core.infrastructure.core.exception.PlatformApiDataValidationException;
 import lombok.RequiredArgsConstructor;
 
