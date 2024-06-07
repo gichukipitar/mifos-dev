@@ -1,12 +1,20 @@
 package com.fineract.mifos.core.useradministration.entity;
 
+import com.fineract.mifos.core.infrastructure.core.api.JsonCommand;
 import com.fineract.mifos.core.infrastructure.core.domain.AbstractPersistableCustom;
 import com.fineract.mifos.core.infrastructure.security.service.PlatformUser;
+import com.fineract.mifos.core.infrastructure.security.service.RandomPasswordGenerator;
 import com.fineract.mifos.core.organisation.office.entity.Office;
 import com.fineract.mifos.core.organisation.staff.entity.Staff;
+import com.fineract.mifos.core.portifolio.client.entity.Client;
+import com.fineract.mifos.core.useradministration.service.AppUserConstants;
 import jakarta.persistence.*;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.User;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -74,7 +82,44 @@ public class AppUser extends AbstractPersistableCustom implements PlatformUser {
     @Column(name = "cannot_change_password", nullable = true)
     private Boolean cannotChangePassword;
 
+    public static AppUser fromJson(final Office userOffice, final Staff linkedStaff, final Set<Role> allRoles,
+                                   final Collection<Client> clients, final JsonCommand command) {
 
+        final String username = command.stringValueOfParameterNamed("username");
+        String password = command.stringValueOfParameterNamed("password");
+        final Boolean sendPasswordToEmail = command.booleanObjectValueOfParameterNamed("sendPasswordToEmail");
+
+        if (sendPasswordToEmail) {
+            password = new RandomPasswordGenerator(13).generate();
+        }
+
+        boolean passwordNeverExpire = false;
+
+        if (command.parameterExists(AppUserConstants.PASSWORD_NEVER_EXPIRES)) {
+            passwordNeverExpire = command.booleanPrimitiveValueOfParameterNamed(AppUserConstants.PASSWORD_NEVER_EXPIRES);
+        }
+
+        final boolean userEnabled = true;
+        final boolean userAccountNonExpired = true;
+        final boolean userCredentialsNonExpired = true;
+        final boolean userAccountNonLocked = true;
+        final boolean cannotChangePassword = false;
+
+        final Collection<SimpleGrantedAuthority> authorities = new ArrayList<>();
+        authorities.add(new SimpleGrantedAuthority("DUMMY_ROLE_NOT_USED_OR_PERSISTED_TO_AVOID_EXCEPTION"));
+
+        final User user = new User(username, password, userEnabled, userAccountNonExpired, userCredentialsNonExpired, userAccountNonLocked,
+                authorities);
+
+        final String email = command.stringValueOfParameterNamed("email");
+        final String firstname = command.stringValueOfParameterNamed("firstname");
+        final String lastname = command.stringValueOfParameterNamed("lastname");
+
+        final boolean isSelfServiceUser = command.booleanPrimitiveValueOfParameterNamed(AppUserConstants.IS_SELF_SERVICE_USER);
+
+        return new AppUser(userOffice, user, allRoles, email, firstname, lastname, linkedStaff, passwordNeverExpire, isSelfServiceUser,
+                clients, cannotChangePassword);
+    }
 
 
 }
