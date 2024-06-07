@@ -1,4 +1,4 @@
-package com.fineract.mifos.accounting.accrual.controller;
+package com.fineract.mifos.accounting.accrual.constants;
 
 public final class AccrualAccountingConstants {
 
