@@ -1,6 +1,7 @@
 package com.fineract.mifos.core.infrastructure.security.service;
 
 import com.fineract.mifos.core.commands.domain.CommandWrapper;
+import com.fineract.mifos.core.useradministration.entity.AppUser;
 
 public interface PlatformSecurityContext extends PlatformUserRightsContext{
     AppUser authenticatedUser();
