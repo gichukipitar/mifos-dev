@@ -1,1 +1,35 @@
+def isCI = System.getenv('JENKINS_URL') != null
+
+gradleEnterprise {
+    server = "https://ge.apache.org"
+    buildScan {
+        capture { taskInputFiles = true }
+        uploadInBackground = !isCI
+        publishAlways()
+        publishIfAuthenticated()
+        obfuscation {
+            ipAddresses { addresses ->
+                addresses.collect { address ->
+                    "0.0.0.0"
+                }
+            }
+        }
+    }
+}
+buildCache {
+    local {
+        enabled = !isCI
+    }
+}
+
 rootProject.name = 'mifos'
+include ':mifos_accounting'
+include ':mifos_branch'
+include ':mifos_client'
+include ':mifos_core'
+include ':mifos_docs'
+include ':mifos_investor'
+include ':mifos_loan'
+include ':mifos_provider'
+include ':mifos_savings'
+
