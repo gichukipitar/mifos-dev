@@ -12,14 +12,12 @@ import com.fineract.mifos.core.organisation.staff.entity.Staff;
 import com.fineract.mifos.core.portifolio.client.entity.Client;
 import com.fineract.mifos.core.useradministration.service.AppUserConstants;
 import jakarta.persistence.*;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 @Entity
 @Table(name = "m_appuser", uniqueConstraints = @UniqueConstraint(columnNames = { "username" }, name = "username_org"))
@@ -114,11 +112,21 @@ public class AppUser extends AbstractPersistableCustom implements PlatformUser {
         this.cannotChangePassword = cannotChangePassword;
     }
 
+    @Override
+    public Collection<GrantedAuthority> getAuthorities() {
+        return populateGrantedAuthorities();
+    }
 
-
-
-
-
+    private List<GrantedAuthority> populateGrantedAuthorities() {
+        final List<GrantedAuthority> grantedAuthorities = new ArrayList<>();
+        for (final Role role : this.roles) {
+            final Collection<Permission> permissions = role.getPermissions();
+            for (final Permission permission : permissions) {
+                grantedAuthorities.add(new SimpleGrantedAuthority(permission.getCode()));
+            }
+        }
+        return grantedAuthorities;
+    }
 
 
 }
