@@ -5,6 +5,7 @@ import com.fineract.mifos.mifos_core.infrastructure.core.api.JsonCommand;
 import com.fineract.mifos.mifos_core.infrastructure.core.data.CommandProcessingResult;
 import com.fineract.mifos.mifos_core.infrastructure.core.serialization.FromJsonHelper;
 import com.fineract.mifos.mifos_core.infrastructure.security.service.PlatformSecurityContext;
+import com.fineract.mifos.mifos_core.useradministration.entity.AppUser;
 import com.google.gson.JsonElement;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
