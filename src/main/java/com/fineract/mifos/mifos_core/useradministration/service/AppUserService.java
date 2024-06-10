@@ -1,5 +1,6 @@
 package com.fineract.mifos.mifos_core.useradministration.service;
 
+import com.fineract.mifos.mifos_core.infrastructure.core.dto.EnumOptionData;
 import com.fineract.mifos.mifos_core.infrastructure.security.service.PlatformPasswordEncoder;
 import com.fineract.mifos.mifos_core.infrastructure.security.service.RandomPasswordGenerator;
 import com.fineract.mifos.mifos_provider.useradministration.repository.AppUserRepository;
@@ -27,6 +28,12 @@ public class AppUserService {
     @Autowired
     private RandomPasswordGenerator randomPasswordGenerator;
 
-
+    public EnumOptionData organisationalRoleData() {
+        EnumOptionData organisationalRole = null;
+        if (thisf.staf != null) {
+            organisationalRole = this.staff.organisationalRoleData();
+        }
+        return organisationalRole;
+    }
 
 }
