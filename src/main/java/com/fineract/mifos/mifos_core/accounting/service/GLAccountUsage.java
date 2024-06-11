@@ -1,12 +1,11 @@
 package com.fineract.mifos.mifos_core.accounting.service;
 
-import lombok.Data;
 import lombok.Getter;
 
 import java.util.HashMap;
 import java.util.Map;
 
-@Data
+
 public enum GLAccountUsage {
     DETAIL(1, "accountUsage.detail"), HEADER(2, "accountUsage.header");
 

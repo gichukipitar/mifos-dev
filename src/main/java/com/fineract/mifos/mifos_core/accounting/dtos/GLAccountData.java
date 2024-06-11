@@ -11,6 +11,7 @@ import lombok.experimental.Accessors;
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.List;
+import com.fineract.mifos.mifos_core.accounting.service.GLAccountUsage;
 
 /**
  * Immutable object representing a General Ledger Account

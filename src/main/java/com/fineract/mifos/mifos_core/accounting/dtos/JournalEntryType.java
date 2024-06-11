@@ -1,8 +1,6 @@
 package com.fineract.mifos.mifos_core.accounting.dtos;
 
-import lombok.Data;
 
-@Data
 public enum JournalEntryType {
     CREDIT(1, "journalEntryType.credit"), DEBIT(2, "journalEntrytType.debit");
 

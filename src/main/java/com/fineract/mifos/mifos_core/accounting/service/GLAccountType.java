@@ -8,19 +8,14 @@ import lombok.Getter;
 public enum GLAccountType {
     ASSET(1, "accountType.asset"), LIABILITY(2, "accountType.liability"), EQUITY(3, "accountType.equity"), INCOME(4,
             "accountType.income"), EXPENSE(5, "accountType.expense");
+    @Getter
     private final Integer value;
+    @Getter
     private final String code;
 
     GLAccountType(Integer value, String code) {
         this.value = value;
         this.code = code;
-    }
-    public Integer getValue() {
-        return this.value;
-    }
-
-    public String getCode() {
-        return this.code;
     }
 
     @Getter

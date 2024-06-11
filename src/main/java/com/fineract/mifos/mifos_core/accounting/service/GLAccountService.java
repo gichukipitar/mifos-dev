@@ -114,11 +114,11 @@ public class GLAccountService {
         }
     }
 
-        public boolean isHeaderAccount () {
-            return GLAccountUsage.HEADER.getValue().equals(this.usage);
+        public boolean isHeaderAccount (GLAccount glAccount) {
+            return GLAccountUsage.HEADER.getValue().equals(glAccount.getUsage());
         }
 
-        public void generateHierarchy () {
+        public void generateHierarchy (GLAccount glAccount) {
 
             if (glAccount.getParent() != null) {
                 glAccount.setHierarchy(glAccount.getParent().getHierarchy() + glAccount.getId() + ".");
@@ -128,12 +128,12 @@ public class GLAccountService {
             }
         }
 
-        private String hierarchyOf ( final Long id){
+        private String hierarchyOf ( final Long id, GLAccount glAccount ){
             return glAccount.getHierarchy() + id.toString() + ".";
         }
 
-        public boolean isDetailAccount () {
-            return GLAccountUsage.DETAIL.getValue().equals(this.usage);
+        public boolean isDetailAccount (GLAccount glAccount) {
+            return GLAccountUsage.DETAIL.getValue().equals(glAccount.getUsage());
         }
     }
 
