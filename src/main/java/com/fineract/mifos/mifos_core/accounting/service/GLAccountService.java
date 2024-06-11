@@ -16,6 +16,7 @@ public class GLAccountService {
     public GLAccountService(GLAccountRepository glAccountRepository) {
         this.glAccountRepository = glAccountRepository;
     }
+
     public static GLAccount fromJson(final GLAccount parent, final JsonCommand command, final CodeValue glAccountTagType) {
         final String name = command.stringValueOfParameterNamed(GLAccountJsonInputParams.NAME.getValue());
         final String glCode = command.stringValueOfParameterNamed(GLAccountJsonInputParams.GL_CODE.getValue());
@@ -45,7 +46,8 @@ public class GLAccountService {
 
         return actualChanges;
     }
-    private void handlePropertyUpdate(final JsonCommand command, final Map<String, Object> actualChanges, final String paramName,
+
+    private void handlePropertyUpdate(final GLAccount glAccount, final JsonCommand command, final Map<String, Object> actualChanges, final String paramName,
                                       final Integer propertyToBeUpdated, final boolean sansLocale) {
         boolean changeDetected = false;
         if (sansLocale) {
@@ -63,25 +65,25 @@ public class GLAccountService {
             actualChanges.put(paramName, newValue);
             // now update actual property
             if (paramName.equals(GLAccountJsonInputParams.TYPE.getValue())) {
-                this.type = newValue;
+                glAccount.setType(newValue);
             } else if (paramName.equals(GLAccountJsonInputParams.USAGE.getValue())) {
-                this.usage = newValue;
+                glAccount.setUsage(newValue);
             }
         }
     }
 
-    private void handlePropertyUpdate(final JsonCommand command, final Map<String, Object> actualChanges, final String paramName,
+    private void handlePropertyUpdate(final JsonCommand command, final GLAccount glAccount, final Map<String, Object> actualChanges, final String paramName,
                                       final String propertyToBeUpdated) {
         if (command.isChangeInStringParameterNamed(paramName, propertyToBeUpdated)) {
             final String newValue = command.stringValueOfParameterNamed(paramName);
             actualChanges.put(paramName, newValue);
             // now update actual property
             if (paramName.equals(GLAccountJsonInputParams.DESCRIPTION.getValue())) {
-                this.description = newValue;
+                glAccount.setDescription(newValue);
             } else if (paramName.equals(GLAccountJsonInputParams.GL_CODE.getValue())) {
-                this.glCode = newValue;
+                glAccount.setGlCode(newValue);
             } else if (paramName.equals(GLAccountJsonInputParams.NAME.getValue())) {
-                this.name = newValue;
+                glAccount.setName(newValue);
             }
         }
     }
@@ -97,37 +99,42 @@ public class GLAccountService {
             }
         }
     }
-    private void handlePropertyUpdate(final JsonCommand command, final Map<String, Object> actualChanges, final String paramName,
+
+    private void handlePropertyUpdate(final JsonCommand command, final GLAccount glAccount, final Map<String, Object> actualChanges, final String paramName,
                                       final boolean propertyToBeUpdated) {
         if (command.isChangeInBooleanParameterNamed(paramName, propertyToBeUpdated)) {
             final Boolean newValue = command.booleanObjectValueOfParameterNamed(paramName);
             actualChanges.put(paramName, newValue);
             // now update actual property
             if (paramName.equals(GLAccountJsonInputParams.MANUAL_ENTRIES_ALLOWED.getValue())) {
-                this.manualEntriesAllowed = newValue;
+                glAccount.setManualEntriesAllowed(newValue);
             } else if (paramName.equals(GLAccountJsonInputParams.DISABLED.getValue())) {
-                this.disabled = newValue;
+                glAccount.setDisabled(newValue);
             }
         }
+    }
 
-        public boolean isHeaderAccount() {
+        public boolean isHeaderAccount () {
             return GLAccountUsage.HEADER.getValue().equals(this.usage);
         }
 
-        public void generateHierarchy() {
+        public void generateHierarchy () {
 
-            if (this.parent != null) {
-                this.hierarchy = this.parent.hierarchyOf(getId());
+            if (glAccount.getParent() != null) {
+                glAccount.setHierarchy(glAccount.getParent().getHierarchy() + glAccount.getId() + ".");
+
             } else {
-                this.hierarchy = ".";
+                glAccount.setHierarchy(".");
             }
         }
 
-        private String hierarchyOf(final Long id) {
-            return this.hierarchy + id.toString() + ".";
+        private String hierarchyOf ( final Long id){
+            return glAccount.getHierarchy() + id.toString() + ".";
         }
 
-        public boolean isDetailAccount() {
+        public boolean isDetailAccount () {
             return GLAccountUsage.DETAIL.getValue().equals(this.usage);
         }
-}
+    }
+
+
