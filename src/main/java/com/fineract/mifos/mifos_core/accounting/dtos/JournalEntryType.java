@@ -21,4 +21,31 @@ public enum JournalEntryType {
     public String getCode() {
         return this.code;
     }
+
+    public static JournalEntryType fromInt(final Integer v) {
+        if (v == null) {
+            return null;
+        }
+
+        switch (v) {
+            case 1:
+                return CREDIT;
+            case 2:
+                return DEBIT;
+            default:
+                return null;
+        }
+    }
+    @Override
+    public String toString() {
+        return name();
+    }
+
+    public boolean isDebitType() {
+        return this.equals(DEBIT);
+    }
+
+    public boolean isCreditType() {
+        return this.equals(CREDIT);
+    }
 }
