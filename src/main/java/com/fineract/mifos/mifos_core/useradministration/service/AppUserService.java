@@ -30,7 +30,7 @@ public class AppUserService {
 
     public EnumOptionData organisationalRoleData() {
         EnumOptionData organisationalRole = null;
-        if (thisf.staf != null) {
+        if (this.staff != null) {
             organisationalRole = this.staff.organisationalRoleData();
         }
         return organisationalRole;
