@@ -1,5 +1,6 @@
 package com.fineract.mifos.mifos_core.accounting.dtos;
 
+import com.fineract.mifos.mifos_core.accounting.service.GLAccountType;
 import lombok.Data;
 
 @Data

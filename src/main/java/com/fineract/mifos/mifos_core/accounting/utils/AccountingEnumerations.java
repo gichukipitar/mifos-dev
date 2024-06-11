@@ -1,5 +1,6 @@
 package com.fineract.mifos.mifos_core.accounting.utils;
 
+import com.fineract.mifos.mifos_core.accounting.service.GLAccountType;
 import com.fineract.mifos.mifos_core.infrastructure.core.dto.EnumOptionData;
 
 import java.util.ArrayList;

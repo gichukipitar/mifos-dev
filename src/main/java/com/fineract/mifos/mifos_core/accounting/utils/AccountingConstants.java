@@ -1,6 +1,7 @@
 package com.fineract.mifos.mifos_core.accounting.utils;
 
 import com.fineract.mifos.mifos_core.accounting.dtos.FinancialActivityData;
+import com.fineract.mifos.mifos_core.accounting.service.GLAccountType;
 
 import java.util.ArrayList;
 import java.util.HashMap;

@@ -1,6 +1,7 @@
 package com.fineract.mifos.mifos_core.accounting.dtos;
 
 
+import com.fineract.mifos.mifos_core.accounting.service.GLAccountType;
 import com.fineract.mifos.mifos_core.accounting.utils.AccountingEnumerations;
 import com.fineract.mifos.mifos_core.infrastructure.core.dto.EnumOptionData;
 import lombok.Data;
@@ -75,4 +76,6 @@ public class GLAccountData implements Serializable {
 
         return new GLAccountData().setDisabled(disabled).setManualEntriesAllowed(manualEntriesAllowed).setType(type).setUsage(usage);
     }
+
+
 }
