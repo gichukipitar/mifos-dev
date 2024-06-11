@@ -3,6 +3,10 @@ package com.fineract.mifos.mifos_core.accounting.api;
 import java.util.HashSet;
 import java.util.Set;
 
+/***
+ * Enum of all parameters passed in while creating/updating a GL Account
+ ***/
+
 public enum GLAccountJsonInputParams {
     ID("id"), NAME("name"), PARENT_ID("parentId"), GL_CODE("glCode"), DISABLED("disabled"), MANUAL_ENTRIES_ALLOWED(
             "manualEntriesAllowed"), TYPE("type"), USAGE("usage"), DESCRIPTION("description"), TAGID("tagId");
