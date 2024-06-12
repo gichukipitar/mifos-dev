@@ -31,7 +31,6 @@ import java.util.function.Function;
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
-import javax.ws.rs.*
 import javax.ws.rs.core.UriInfo;
 
 import static jakarta.servlet.http.HttpServletResponse.SC_INTERNAL_SERVER_ERROR;
@@ -62,9 +61,6 @@ public class BatchApiServiceImpl implements BatchApiService {
     /**
      * Run each request root step in a separated transaction
      *
-     * @param requestList
-     * @param uriInfo
-     * @return
      */
     @Override
     public List<BatchResponse> handleBatchRequestsWithoutEnclosingTransaction(final List<BatchRequest> requestList, UriInfo uriInfo) {
