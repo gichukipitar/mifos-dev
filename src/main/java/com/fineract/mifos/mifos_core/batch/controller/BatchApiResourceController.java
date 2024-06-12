@@ -7,16 +7,16 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * Provides a REST controller for Batch Requests. This class acts as a proxy to
- * {@link org.apache.fineract.batch.service.BatchApiService} and de-serializes the incoming JSON string to a list of
- * {@link org.apache.fineract.batch.domain .BatchRequest} type. This list is forwarded to BatchApiService which finally
- * returns a list of {@link org.apache.fineract.batch.domain.BatchResponse} type which is then serialized into JSON
+ * {@link com.fineract.mifos.mifos_core.batch.dtos.BatchApiService} and de-serializes the incoming JSON string to a list of
+ * {@link com.fineract.mifos.mifos_core.batch.dtos.BatchRequest} type. This list is forwarded to BatchApiService which finally
+ * returns a list of {@link com.fineract.mifos.mifos_core.batch.dtos.BatchResponse} type which is then serialized into JSON
  * response by this Resource class.
  *
  * @author Peter Gichuki
  *
- * @see org.apache.fineract.batch.service.BatchApiService
- * @see org.apache.fineract.batch.domain.BatchRequest
- * @see org.apache.fineract.batch.domain.BatchResponse
+ * @see com.fineract.mifos.mifos_core.batch.service.BatchApiService
+ * @see com.fineract.mifos.mifos_core.batch.dtos.BatchRequest
+ * @see com.fineract.mifos.mifos_core.batch.dtos.BatchResponse
  */
 
 @RestController
