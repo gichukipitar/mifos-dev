@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
+import static com.fineract.mifos.mifos_core.batch.command.CommandStrategyUtils.isResourceVersioned;
 import static org.springframework.http.HttpMethod.*;
 
 /**
