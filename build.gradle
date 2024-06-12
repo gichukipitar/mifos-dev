@@ -37,6 +37,7 @@ dependencies {
 	implementation group: 'io.swagger.core.v3', name: 'swagger-annotations', version: '2.2.22'
 // https://mvnrepository.com/artifact/org.apache.commons/commons-lang3
 	implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.0'
+	implementation group: 'javax.ws.rs', name: 'javax.ws.rs-api', version: '2.0.1'
 
 	implementation 'org.slf4j:slf4j-api:1.7.32'
 	implementation 'ch.qos.logback:logback-classic:1.2.6' // Common binding for SLF4J
@@ -45,6 +46,7 @@ dependencies {
 	compileOnly 'org.projectlombok:lombok'
 	compileOnly 'com.google.code.findbugs:annotations:3.0.1'
 	compileOnly 'com.google.code.findbugs:jsr305:3.0.1'
+
 	runtimeOnly 'org.postgresql:postgresql'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'

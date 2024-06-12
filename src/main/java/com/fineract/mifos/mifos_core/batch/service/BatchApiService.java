@@ -3,6 +3,7 @@ package com.fineract.mifos.mifos_core.batch.service;
 import com.fineract.mifos.mifos_core.batch.dtos.BatchRequest;
 import com.fineract.mifos.mifos_core.batch.dtos.BatchResponse;
 
+import javax.ws.rs.core.UriInfo;
 import java.util.List;
 
 /**
@@ -16,8 +17,8 @@ import java.util.List;
  */
 public interface BatchApiService {
     /**
-     * Returns a list of {@link org.apache.fineract.batch.domain.BatchResponse}s by getting the appropriate
-     * CommandStrategy for every {@link org.apache.fineract.batch.domain.BatchRequest}. It will be used when the Query
+     * Returns a list of {@link com.fineract.mifos.mifos_core.batch.dtos.BatchResponse}s by getting the appropriate
+     * CommandStrategy for every {@link com.fineract.mifos.mifos_core.batch.dtos.BatchRequest}. It will be used when the Query
      * Parameter "enclosingTransaction "is set to 'false'.
      *
      * @param requestList

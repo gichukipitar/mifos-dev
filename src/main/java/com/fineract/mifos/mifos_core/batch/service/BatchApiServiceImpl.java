@@ -28,6 +28,9 @@ import java.util.function.Function;
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
+import javax.ws.rs.*
+import javax.ws.rs.core.UriInfo;
+
 import static jakarta.servlet.http.HttpServletResponse.SC_INTERNAL_SERVER_ERROR;
 import static jakarta.servlet.http.HttpServletResponse.SC_OK;
 
@@ -121,7 +124,7 @@ public class BatchApiServiceImpl implements BatchApiService {
         }
     }
     /**
-     * Returns the response list by getting a proper {@link org.apache.fineract.batch.command.CommandStrategy}.
+     * Returns the response list by getting a proper {@link com.fineract.mifos.mifos_core.batch.command.CommandStrategy}.
      * execute() method of acquired commandStrategy is then provided with the separate Request.
      *
      * @param requestList
