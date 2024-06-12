@@ -36,7 +36,7 @@ public class GLAccountService {
         handlePropertyUpdate(command, actualChanges, GLAccountJsonInputParams.TYPE.getValue(), glAccount.getType(), true, glAccount);
         handlePropertyUpdate(command, actualChanges, GLAccountJsonInputParams.USAGE.getValue(), glAccount.getUsage(), true, glAccount);
         handlePropertyUpdate(command, actualChanges, GLAccountJsonInputParams.TAGID.getValue(),
-                glAccount != null && glAccount.getTagId() != null ? glAccount.getId() : 0L);
+                glAccount.getTagId() != null ? glAccount.getId() : Long.valueOf(0L));
 
         return actualChanges;
     }
