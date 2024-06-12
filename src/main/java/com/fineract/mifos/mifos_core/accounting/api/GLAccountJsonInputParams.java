@@ -1,5 +1,7 @@
 package com.fineract.mifos.mifos_core.accounting.api;
 
+import lombok.Getter;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -7,6 +9,7 @@ import java.util.Set;
  * Enum of all parameters passed in while creating/updating a GL Account
  ***/
 
+@Getter
 public enum GLAccountJsonInputParams {
     ID("id"), NAME("name"), PARENT_ID("parentId"), GL_CODE("glCode"), DISABLED("disabled"), MANUAL_ENTRIES_ALLOWED(
             "manualEntriesAllowed"), TYPE("type"), USAGE("usage"), DESCRIPTION("description"), TAGID("tagId");
@@ -31,10 +34,7 @@ public enum GLAccountJsonInputParams {
 
     @Override
     public String toString() {
-        return name().toString().replaceAll("_", " ");
+        return name().replaceAll("_", " ");
     }
 
-    public String getValue() {
-        return this.value;
-    }
 }
