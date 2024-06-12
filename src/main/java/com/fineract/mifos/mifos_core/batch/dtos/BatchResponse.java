@@ -1,6 +1,6 @@
 package com.fineract.mifos.mifos_core.batch.dtos;
 
-import io.swagger.v3.oas.annotations.headers.Header;
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
