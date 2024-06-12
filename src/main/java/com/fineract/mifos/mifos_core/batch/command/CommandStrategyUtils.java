@@ -1,5 +1,6 @@
 package com.fineract.mifos.mifos_core.batch.command;
 
+import com.fineract.mifos.mifos_core.batch.dtos.BatchRequest;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.HashMap;

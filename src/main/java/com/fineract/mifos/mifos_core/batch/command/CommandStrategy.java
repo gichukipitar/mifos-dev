@@ -1,19 +1,21 @@
 package com.fineract.mifos.mifos_core.batch.command;
+
+import com.fineract.mifos.mifos_core.batch.dtos.BatchRequest;
+import com.fineract.mifos.mifos_core.batch.dtos.BatchResponse;
+
 /**
  * An interface for various Command Strategies. It contains a single function which returns appropriate response from a
  * particular command strategy.
  *
  * @author Peter Gichuki
  *
- * @see org.apache.fineract.batch.command.internal.UnknownCommandStrategy
+ * @see com.fineract.mifos.mifos_core.batch.command.UnknownCommandStrategy
  */
 public interface CommandStrategy {
     /**
-     * Returns an object of type {@link org.apache.fineract.batch.domain.BatchResponse}. This takes
-     * {@link org.apache.fineract.batch.domain.BatchRequest} as it's single argument and provides appropriate response.
+     * Returns an object of type {}. This takes
+     * {} as it's single argument and provides appropriate response.
      *
-     * @param batchRequest
-     * @param uriInfo
      * @return BatchResponse
      */
     BatchResponse execute(BatchRequest batchRequest, UriInfo uriInfo);

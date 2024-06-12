@@ -1,10 +1,14 @@
 package com.fineract.mifos.mifos_core.batch.command;
 
+import com.fineract.mifos.mifos_core.batch.dtos.BatchRequest;
+import com.fineract.mifos.mifos_core.batch.dtos.BatchResponse;
 import org.springframework.stereotype.Component;
 
+import static jakarta.servlet.http.HttpServletResponse.SC_NOT_IMPLEMENTED;
+
 /**
- * Provides a default CommandStrategy by implementing {@link org.apache.fineract.batch.command.CommandStrategy} in case
- * there is no appropriate command strategy with requested 'method' and 'resoureUrl'.
+ * Provides a default CommandStrategy by implementing in case
+ * there is no appropriate command strategy with requested 'method' and 'resourceUrl'.
  *
  * @author Peter Gichuki
  */
