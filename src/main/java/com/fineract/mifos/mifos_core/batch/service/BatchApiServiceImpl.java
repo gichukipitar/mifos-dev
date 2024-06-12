@@ -184,9 +184,6 @@ public class BatchApiServiceImpl implements BatchApiService {
     /**
      * Execute the request
      *
-     * @param request
-     * @param uriInfo
-     * @return
      */
     private BatchResponse executeRequest(BatchRequest request, UriInfo uriInfo) {
         final CommandStrategy commandStrategy = this.strategyProvider
