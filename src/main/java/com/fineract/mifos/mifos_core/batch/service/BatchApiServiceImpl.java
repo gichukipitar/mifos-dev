@@ -130,7 +130,7 @@ public class BatchApiServiceImpl implements BatchApiService {
      */
 
     private List<BatchResponse> handleRequestNodes(final List<BatchRequest> requestList, final UriInfo uriInfo) {
-        final List<BatchRequestNode> rootNodes;
+        final List<ResolutionHelper.BatchRequestNode> rootNodes;
         try {
             rootNodes = this.resolutionHelper.buildNodesTree(requestList);
         } catch (BatchReferenceInvalidException e) {
@@ -138,7 +138,7 @@ public class BatchApiServiceImpl implements BatchApiService {
         }
 
         final ArrayList<BatchResponse> responseList = new ArrayList<>(requestList.size());
-        for (BatchRequestNode rootNode : rootNodes) {
+        for (ResolutionHelper.BatchRequestNode rootNode : rootNodes) {
             this.callRequestRecursive(rootNode.getRequest(), rootNode, responseList, uriInfo);
         }
         responseList.sort(Comparator.comparing(BatchResponse::getRequestId));
@@ -157,7 +157,7 @@ public class BatchApiServiceImpl implements BatchApiService {
      * @return {@code BatchResponse}
      */
 
-    private void callRequestRecursive(BatchRequest request, BatchRequestNode requestNode, List<BatchResponse> responseList,
+    private void callRequestRecursive(BatchRequest request, ResolutionHelper.BatchRequestNode requestNode, List<BatchResponse> responseList,
                                       UriInfo uriInfo) {
         // run current node
         BatchResponse response = executeRequest(request, uriInfo);
@@ -244,7 +244,7 @@ public class BatchApiServiceImpl implements BatchApiService {
      *            the current request node
      * @return {@code BatchResponse} list of the generated batch responses
      */
-    private List<BatchResponse> parentRequestFailedRecursive(@NotNull BatchRequest request, @NotNull BatchRequestNode requestNode,
+    private List<BatchResponse> parentRequestFailedRecursive(@NotNull BatchRequest request, @NotNull ResolutionHelper.BatchRequestNode requestNode,
                                                              @NotNull BatchResponse response, Long parentId) {
         List<BatchResponse> responseList = new ArrayList<>();
         if (parentId == null) { // root
