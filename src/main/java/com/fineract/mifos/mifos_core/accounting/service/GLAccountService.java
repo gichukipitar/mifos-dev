@@ -11,18 +11,12 @@ import java.util.Map;
 
 @Service
 public class GLAccountService {
-    private final GLAccountRepository glAccountRepository;
-
-    public GLAccountService(GLAccountRepository glAccountRepository) {
-        this.glAccountRepository = glAccountRepository;
-    }
 
     public static GLAccount fromJson(final GLAccount parent, final JsonCommand command, final CodeValue glAccountTagType) {
         final String name = command.stringValueOfParameterNamed(GLAccountJsonInputParams.NAME.getValue());
         final String glCode = command.stringValueOfParameterNamed(GLAccountJsonInputParams.GL_CODE.getValue());
         final boolean disabled = command.booleanPrimitiveValueOfParameterNamed(GLAccountJsonInputParams.DISABLED.getValue());
-        final boolean manualEntriesAllowed = command
-                .booleanPrimitiveValueOfParameterNamed(GLAccountJsonInputParams.MANUAL_ENTRIES_ALLOWED.getValue());
+        final boolean manualEntriesAllowed = command.booleanPrimitiveValueOfParameterNamed(GLAccountJsonInputParams.MANUAL_ENTRIES_ALLOWED.getValue());
         final Integer usage = command.integerValueSansLocaleOfParameterNamed(GLAccountJsonInputParams.USAGE.getValue());
         final Integer type = command.integerValueSansLocaleOfParameterNamed(GLAccountJsonInputParams.TYPE.getValue());
         final String description = command.stringValueOfParameterNamed(GLAccountJsonInputParams.DESCRIPTION.getValue());
@@ -33,22 +27,22 @@ public class GLAccountService {
 
     public Map<String, Object> update(final GLAccount glAccount, final JsonCommand command) {
         final Map<String, Object> actualChanges = new LinkedHashMap<>(15);
-        handlePropertyUpdate(command, actualChanges, GLAccountJsonInputParams.DESCRIPTION.getValue(), glAccount.getDescription());
-        handlePropertyUpdate(command, actualChanges, GLAccountJsonInputParams.DISABLED.getValue(), glAccount.isDisabled());
-        handlePropertyUpdate(command, actualChanges, GLAccountJsonInputParams.GL_CODE.getValue(), glAccount.getGlCode());
-        handlePropertyUpdate(command, actualChanges, GLAccountJsonInputParams.MANUAL_ENTRIES_ALLOWED.getValue(), glAccount.isManualEntriesAllowed());
-        handlePropertyUpdate(command, actualChanges, GLAccountJsonInputParams.NAME.getValue(), glAccount.getName());
+        handlePropertyUpdate(command, actualChanges, GLAccountJsonInputParams.DESCRIPTION.getValue(), glAccount.getDescription(), glAccount);
+        handlePropertyUpdate(command, actualChanges, GLAccountJsonInputParams.DISABLED.getValue(), glAccount.isDisabled(), glAccount);
+        handlePropertyUpdate(command, actualChanges, GLAccountJsonInputParams.GL_CODE.getValue(), glAccount.getGlCode(), glAccount);
+        handlePropertyUpdate(command, actualChanges, GLAccountJsonInputParams.MANUAL_ENTRIES_ALLOWED.getValue(), glAccount.isManualEntriesAllowed(), glAccount);
+        handlePropertyUpdate(command, actualChanges, GLAccountJsonInputParams.NAME.getValue(), glAccount.getName(), glAccount);
         handlePropertyUpdate(command, actualChanges, GLAccountJsonInputParams.PARENT_ID.getValue(), 0L);
-        handlePropertyUpdate(command, actualChanges, GLAccountJsonInputParams.TYPE.getValue(), glAccount.getType(), true);
-        handlePropertyUpdate(command, actualChanges, GLAccountJsonInputParams.USAGE.getValue(), glAccount.getUsage(), true);
+        handlePropertyUpdate(command, actualChanges, GLAccountJsonInputParams.TYPE.getValue(), glAccount.getType(), true, glAccount);
+        handlePropertyUpdate(command, actualChanges, GLAccountJsonInputParams.USAGE.getValue(), glAccount.getUsage(), true, glAccount);
         handlePropertyUpdate(command, actualChanges, GLAccountJsonInputParams.TAGID.getValue(),
                 glAccount != null && glAccount.getTagId() != null ? glAccount.getId() : 0L);
 
         return actualChanges;
     }
 
-    private void handlePropertyUpdate(final GLAccount glAccount, final JsonCommand command, final Map<String, Object> actualChanges, final String paramName,
-                                      final Integer propertyToBeUpdated, final boolean sansLocale) {
+    private void handlePropertyUpdate(final JsonCommand command, final Map<String, Object> actualChanges, final String paramName,
+                                      final Integer propertyToBeUpdated, final boolean sansLocale, GLAccount glAccount) {
         boolean changeDetected = false;
         if (sansLocale) {
             changeDetected = command.isChangeInIntegerSansLocaleParameterNamed(paramName, propertyToBeUpdated);
@@ -72,8 +66,8 @@ public class GLAccountService {
         }
     }
 
-    private void handlePropertyUpdate(final JsonCommand command, final GLAccount glAccount, final Map<String, Object> actualChanges, final String paramName,
-                                      final String propertyToBeUpdated) {
+    private void handlePropertyUpdate(final JsonCommand command, final Map<String, Object> actualChanges, final String paramName,
+                                      final String propertyToBeUpdated, GLAccount glAccount) {
         if (command.isChangeInStringParameterNamed(paramName, propertyToBeUpdated)) {
             final String newValue = command.stringValueOfParameterNamed(paramName);
             actualChanges.put(paramName, newValue);
@@ -100,8 +94,8 @@ public class GLAccountService {
         }
     }
 
-    private void handlePropertyUpdate(final JsonCommand command, final GLAccount glAccount, final Map<String, Object> actualChanges, final String paramName,
-                                      final boolean propertyToBeUpdated) {
+    private void handlePropertyUpdate(final JsonCommand command, final Map<String, Object> actualChanges, final String paramName,
+                                      final boolean propertyToBeUpdated, GLAccount glAccount) {
         if (command.isChangeInBooleanParameterNamed(paramName, propertyToBeUpdated)) {
             final Boolean newValue = command.booleanObjectValueOfParameterNamed(paramName);
             actualChanges.put(paramName, newValue);
@@ -114,9 +108,9 @@ public class GLAccountService {
         }
     }
 
-        public boolean isHeaderAccount (GLAccount glAccount) {
-            return GLAccountUsage.HEADER.getValue().equals(glAccount.getUsage());
-        }
+    public boolean isHeaderAccount(GLAccount glAccount) {
+        return GLAccountUsage.HEADER.getValue().equals(glAccount.getUsage());
+    }
 
         public void generateHierarchy (GLAccount glAccount) {
 
@@ -128,7 +122,7 @@ public class GLAccountService {
             }
         }
 
-        private String hierarchyOf ( final Long id, GLAccount glAccount ){
+        private String hierarchyOf (GLAccount glAccount, final Long id ){
             return glAccount.getHierarchy() + id.toString() + ".";
         }
 
