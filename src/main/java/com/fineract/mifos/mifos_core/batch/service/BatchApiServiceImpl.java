@@ -127,8 +127,6 @@ public class BatchApiServiceImpl implements BatchApiService {
      * Returns the response list by getting a proper {@link com.fineract.mifos.mifos_core.batch.command.CommandStrategy}.
      * execute() method of acquired commandStrategy is then provided with the separate Request.
      *
-     * @param requestList
-     * @param uriInfo
      * @return {@code List<BatchResponse>}
      */
 
