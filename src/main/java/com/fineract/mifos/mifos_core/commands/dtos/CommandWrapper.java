@@ -1,4 +1,4 @@
-package com.fineract.mifos.mifos_core.commands.domain;
+package com.fineract.mifos.mifos_core.commands.dtos;
 
 import com.fineract.mifos.mifos_core.useradministration.api.PasswordPreferencesApiConstants;
 import lombok.Data;

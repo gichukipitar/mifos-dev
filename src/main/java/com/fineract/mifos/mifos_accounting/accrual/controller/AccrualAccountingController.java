@@ -1,6 +1,6 @@
 package com.fineract.mifos.mifos_accounting.accrual.controller;
 
-import com.fineract.mifos.mifos_core.commands.domain.CommandWrapper;
+import com.fineract.mifos.mifos_core.commands.dtos.CommandWrapper;
 import com.fineract.mifos.mifos_core.commands.service.CommandWrapperBuilder;
 import com.fineract.mifos.mifos_core.commands.service.PortfolioCommandSourceWritePlatformService;
 import com.fineract.mifos.mifos_core.infrastructure.core.data.CommandProcessingResult;

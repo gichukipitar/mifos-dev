@@ -1,6 +1,6 @@
 package com.fineract.mifos.mifos_core.commands.service;
 
-import com.fineract.mifos.mifos_core.commands.domain.CommandWrapper;
+import com.fineract.mifos.mifos_core.commands.dtos.CommandWrapper;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 
 public class CommandWrapperBuilder {

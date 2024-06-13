@@ -1,6 +1,6 @@
 package com.fineract.mifos.mifos_core.infrastructure.security.service;
 
-import com.fineract.mifos.mifos_core.commands.domain.CommandWrapper;
+import com.fineract.mifos.mifos_core.commands.dtos.CommandWrapper;
 import com.fineract.mifos.mifos_core.useradministration.entity.AppUser;
 import org.springframework.stereotype.Component;
 

@@ -1,6 +1,7 @@
 package com.fineract.mifos.mifos_core.commands.service;
 
-import com.fineract.mifos.mifos_core.commands.domain.CommandWrapper;
+import com.fineract.mifos.mifos_core.commands.dtos.CommandWrapper;
+import com.fineract.mifos.mifos_core.commands.entity.CommandSource;
 import com.fineract.mifos.mifos_core.infrastructure.core.api.JsonCommand;
 import com.fineract.mifos.mifos_core.infrastructure.core.data.CommandProcessingResult;
 import com.fineract.mifos.mifos_core.infrastructure.core.serialization.FromJsonHelper;
