@@ -7,6 +7,7 @@ import com.fineract.mifos.mifos_core.batch.service.BatchApiService;
 import com.fineract.mifos.mifos_core.infrastructure.core.serialization.ToApiJsonSerializer;
 import com.fineract.mifos.mifos_core.infrastructure.security.exception.InvalidInstanceTypeMethodException;
 import com.fineract.mifos.mifos_core.infrastructure.security.service.PlatformSecurityContext;
+import com.fineract.mifos.mifos_core.infrastructure.core.config.FineractProperties;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.media.ArraySchema;
