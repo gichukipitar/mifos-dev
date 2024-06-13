@@ -4,6 +4,7 @@ import com.fineract.mifos.mifos_core.commands.dtos.CommandWrapper;
 import com.fineract.mifos.mifos_core.commands.entity.CommandSource;
 import com.fineract.mifos.mifos_core.commands.exception.CommandNotAwaitingApprovalException;
 import com.fineract.mifos.mifos_core.commands.exception.CommandNotFoundException;
+import com.fineract.mifos.mifos_core.commands.exception.UnsupportedCommandException;
 import com.fineract.mifos.mifos_core.commands.repository.CommandSourceRepository;
 import com.fineract.mifos.mifos_core.infrastructure.core.api.JsonCommand;
 import com.fineract.mifos.mifos_core.infrastructure.core.data.CommandProcessingResult;
