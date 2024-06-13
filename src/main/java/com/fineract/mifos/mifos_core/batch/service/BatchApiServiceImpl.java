@@ -11,6 +11,7 @@ import com.fineract.mifos.mifos_core.batch.exception.BatchReferenceInvalidExcept
 import com.fineract.mifos.mifos_core.batch.exception.ErrorInfo;
 import com.fineract.mifos.mifos_core.infrastructure.core.exception.ErrorHandler;
 import com.fineract.mifos.mifos_core.infrastructure.core.filters.BatchFilter;
+import com.fineract.mifos.mifos_core.infrastructure.core.filters.BatchRequestPreprocessor;
 import com.google.gson.Gson;
 import com.jayway.jsonpath.JsonPathException;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
