@@ -2,7 +2,7 @@ package com.fineract.mifos.mifos_core.batch.command;
 
 import com.fineract.mifos.mifos_core.batch.dtos.BatchRequest;
 import com.fineract.mifos.mifos_core.batch.dtos.BatchResponse;
-
+import javax.ws.rs.core.UriInfo;
 /**
  * An interface for various Command Strategies. It contains a single function which returns appropriate response from a
  * particular command strategy.

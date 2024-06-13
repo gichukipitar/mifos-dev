@@ -9,13 +9,17 @@ import com.fineract.mifos.mifos_core.batch.dtos.Header;
 import com.fineract.mifos.mifos_core.batch.exception.BatchExecutionException;
 import com.fineract.mifos.mifos_core.batch.exception.BatchReferenceInvalidException;
 import com.fineract.mifos.mifos_core.batch.exception.ErrorInfo;
+import com.fineract.mifos.mifos_core.infrastructure.core.domain.BatchRequestContextHolder;
 import com.fineract.mifos.mifos_core.infrastructure.core.exception.ErrorHandler;
+import com.fineract.mifos.mifos_core.infrastructure.core.filters.BatchCallHandler;
 import com.fineract.mifos.mifos_core.infrastructure.core.filters.BatchFilter;
 import com.fineract.mifos.mifos_core.infrastructure.core.filters.BatchRequestPreprocessor;
 import com.google.gson.Gson;
 import com.jayway.jsonpath.JsonPathException;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import io.vavr.control.Either;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.antlr.v4.runtime.misc.NotNull;
@@ -60,6 +64,9 @@ public class BatchApiServiceImpl implements BatchApiService {
     private final List<BatchFilter> batchFilters;
 
     private final List<BatchRequestPreprocessor> batchPreprocessors;
+
+    @PersistenceContext
+    private final EntityManager entityManager;
 
     /**
      * Run each request root step in a separated transaction

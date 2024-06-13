@@ -4,6 +4,8 @@ import com.fineract.mifos.mifos_core.batch.dtos.BatchRequest;
 import com.fineract.mifos.mifos_core.batch.dtos.BatchResponse;
 import org.springframework.stereotype.Component;
 
+import javax.ws.rs.core.UriInfo;
+
 import static jakarta.servlet.http.HttpServletResponse.SC_NOT_IMPLEMENTED;
 
 /**
