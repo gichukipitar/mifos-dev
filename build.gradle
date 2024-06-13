@@ -44,6 +44,8 @@ dependencies {
 	implementation 'org.springframework.batch:spring-batch-infrastructure:4.3.3'
 	implementation 'org.springframework:spring-context:5.3.15'
 	implementation 'org.springframework:spring-tx:5.3.15'
+	implementation 'org.springframework.boot:spring-boot-starter-batch'
+
 
 	implementation 'org.slf4j:slf4j-api:1.7.32'
 	implementation 'ch.qos.logback:logback-classic:1.2.6' // Common binding for SLF4J

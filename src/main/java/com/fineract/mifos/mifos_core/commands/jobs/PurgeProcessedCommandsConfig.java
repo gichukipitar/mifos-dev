@@ -2,7 +2,9 @@ package com.fineract.mifos.mifos_core.commands.jobs;
 
 import com.fineract.mifos.mifos_core.infrastructure.jobs.service.JobName;
 import com.fineract.mifos.mifos_core.infrastructure.jobs.service.StepName;
+import lombok.Data;
 import org.springframework.batch.core.Step;
+import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing;
 import org.springframework.batch.core.job.builder.JobBuilder;
 import org.springframework.batch.core.launch.support.RunIdIncrementer;
 import org.springframework.batch.core.step.builder.StepBuilder;
@@ -15,6 +17,8 @@ import org.springframework.transaction.PlatformTransactionManager;
 
 
 @Configuration
+@EnableBatchProcessing
+@Data
 public class PurgeProcessedCommandsConfig {
     @Autowired
     private JobRepository jobRepository;
@@ -22,6 +26,7 @@ public class PurgeProcessedCommandsConfig {
     private PlatformTransactionManager transactionManager;
     @Autowired
     private PurgeProcessedCommandsTasklet tasklet;
+
 
     @Bean
     protected Step purgeProcessedCommandsStep() {
