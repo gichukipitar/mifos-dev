@@ -181,4 +181,8 @@ public class AppUser extends AbstractPersistableCustom implements PlatformUser {
     public String toString() {
         return "AppUser [username=" + this.username + ", getId()=" + this.getId() + "]";
     }
+
+    public boolean isCheckerSuperUser() {
+        return hasPermissionTo("CHECKER_SUPER_USER");
+    }
 }
