@@ -28,4 +28,5 @@ public class BusinessDate extends AbstractAuditableWithUTCDateTimeCustom {
 
     public static BusinessDate instance(@NotNull BusinessDateType businessDateType, @NotNull LocalDate date) {
         return new BusinessDate().setType(businessDateType).setDate(date);
+    }
 }
