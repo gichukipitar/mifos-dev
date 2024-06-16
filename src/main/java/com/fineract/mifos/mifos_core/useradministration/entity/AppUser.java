@@ -185,4 +185,7 @@ public class AppUser extends AbstractPersistableCustom implements PlatformUser {
     public boolean isCheckerSuperUser() {
         return hasPermissionTo("CHECKER_SUPER_USER");
     }
+    public void validateHasReadPermission(final String resourceType) {
+        validateHasPermission("READ", resourceType);
+    }
 }
