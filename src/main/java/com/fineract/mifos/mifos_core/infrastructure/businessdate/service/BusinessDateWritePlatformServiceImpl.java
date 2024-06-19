@@ -89,7 +89,7 @@ public class BusinessDateWritePlatformServiceImpl implements BusinessDateWritePl
             exceptions.add(e);
         }
         if (!exceptions.isEmpty()) {
-            throw new JobExecutionException(exceptions);
+            throw new JobExecutionException(exceptions.toString());
         }
     }
 
