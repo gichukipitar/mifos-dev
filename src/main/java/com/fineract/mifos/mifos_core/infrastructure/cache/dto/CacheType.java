@@ -1,8 +1,11 @@
 package com.fineract.mifos.mifos_core.infrastructure.cache.dto;
 
+import lombok.Getter;
+
 import java.util.HashMap;
 import java.util.Map;
 
+@Getter
 public enum CacheType {
     INVALID(0, "cacheType.invalid"), //
     NO_CACHE(1, "cacheType.noCache"), //
@@ -35,15 +38,7 @@ public enum CacheType {
 
     @Override
     public String toString() {
-        return name().toString().replaceAll("_", " ");
-    }
-
-    public Integer getValue() {
-        return this.value;
-    }
-
-    public String getCode() {
-        return this.code;
+        return name().replaceAll("_", " ");
     }
 
     public boolean isNoCache() {
@@ -58,4 +53,4 @@ public enum CacheType {
         return MULTI_NODE.getValue().equals(this.value);
     }
 }
-}
+
