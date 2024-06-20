@@ -1,5 +1,6 @@
 package com.fineract.mifos.mifos_core.infrastructure.cache.service;
 
+import com.fineract.mifos.mifos_core.infrastructure.cache.dto.CacheType;
 import com.fineract.mifos.mifos_core.infrastructure.core.dto.EnumOptionData;
 
 
