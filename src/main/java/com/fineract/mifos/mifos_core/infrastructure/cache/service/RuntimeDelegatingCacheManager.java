@@ -8,6 +8,8 @@ import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.InitializingBean;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.cache.Cache;
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.support.NoOpCacheManager;
 import org.springframework.stereotype.Component;
@@ -25,6 +27,26 @@ import java.util.*;
 @Slf4j
 
 public class RuntimeDelegatingCacheManager implements CacheManager, InitializingBean {
+
+
+    private final CacheManager ehCacheManager;
+    private final CacheManager defaultCacheManager;
+    private CacheManager currentCacheManager;
+
+    @Override
+    public void afterPropertiesSet() throws Exception {
+        currentCacheManager = defaultCacheManager;
+    }
+
+    @Override
+    public Cache getCache(final String name) {
+        return currentCacheManager.getCache(name);
+    }
+
+    @Override
+    public Collection<String> getCacheNames() {
+        return currentCacheManager.getCacheNames();
+    }
 
     public Collection<CacheData> retrieveAll() {
 
