@@ -1,5 +1,6 @@
 package com.fineract.mifos.mifos_core.infrastructure.codes.entity;
 
+import com.fineract.mifos.mifos_core.infrastructure.codes.exception.SystemDefinedCodeCannotBeChangedException;
 import com.fineract.mifos.mifos_core.infrastructure.core.api.JsonCommand;
 import com.fineract.mifos.mifos_core.infrastructure.core.domain.AbstractPersistableCustom;
 import jakarta.persistence.*;
