@@ -3,6 +3,7 @@ package com.fineract.mifos.mifos_core.accounting.dtos;
 
 import com.fineract.mifos.mifos_core.accounting.service.GLAccountType;
 import com.fineract.mifos.mifos_core.accounting.utils.AccountingEnumerations;
+import com.fineract.mifos.mifos_core.infrastructure.codes.dto.CodeValueData;
 import com.fineract.mifos.mifos_core.infrastructure.core.dto.EnumOptionData;
 import lombok.Data;
 import lombok.NoArgsConstructor;
