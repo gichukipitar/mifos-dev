@@ -3,6 +3,7 @@ package com.fineract.mifos.mifos_core.infrastructure.codes.entity;
 import com.fineract.mifos.mifos_core.infrastructure.codes.CodeConstants;
 import com.fineract.mifos.mifos_core.infrastructure.core.api.JsonCommand;
 import com.fineract.mifos.mifos_core.infrastructure.core.domain.AbstractPersistableCustom;
+import com.fineract.mifos.mifos_core.infrastructure.codes.dto.CodeValueData;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -72,7 +73,7 @@ public class CodeValue extends AbstractPersistableCustom {
 
         final Map<String, Object> actualChanges = new LinkedHashMap<>(2);
 
-        final String labelParamName = CodevalueJSONinputParams.NAME.getValue();
+        final String labelParamName = CodeConstants.CodevalueJSONinputParams.NAME.getValue();
         if (command.isChangeInStringParameterNamed(labelParamName, this.label)) {
             final String newValue = command.stringValueOfParameterNamed(labelParamName);
             actualChanges.put(labelParamName, newValue);
