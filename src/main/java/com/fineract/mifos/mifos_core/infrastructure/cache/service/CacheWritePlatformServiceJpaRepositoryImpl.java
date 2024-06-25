@@ -1,6 +1,7 @@
 package com.fineract.mifos.mifos_core.infrastructure.cache.service;
 
 import com.fineract.mifos.mifos_core.infrastructure.cache.dto.CacheType;
+import com.fineract.mifos.mifos_core.infrastructure.configuration.service.ConfigurationDomainService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;

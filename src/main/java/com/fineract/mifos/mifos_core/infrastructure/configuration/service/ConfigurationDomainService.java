@@ -1,9 +1,11 @@
 package com.fineract.mifos.mifos_core.infrastructure.configuration.service;
 
 import com.fineract.mifos.mifos_core.infrastructure.cache.dto.CacheType;
+import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
 
+@Component
 public interface ConfigurationDomainService {
 
     boolean isMakerCheckerEnabledForTask(String taskPermissionCode);

@@ -6,7 +6,7 @@ import com.fineract.mifos.mifos_core.infrastructure.core.data.CommandProcessingR
 import com.fineract.mifos.mifos_core.useradministration.entity.AppUser;
 import org.springframework.stereotype.Component;
 
-@Component
+
 public interface CommandProcessingService {
     CommandProcessingResult executeCommand(CommandWrapper wrapper, JsonCommand command, boolean isApprovedByChecker);
 
