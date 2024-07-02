@@ -5,6 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Condition;
 import org.springframework.context.annotation.ConditionContext;
 import org.springframework.core.type.AnnotatedTypeMetadata;
+import com.fineract.mifos.mifos_core.infrastructure.core.config.ExplicitConfigurationPropertiesFactory;
 
 import java.util.List;
 import java.util.function.Predicate;
