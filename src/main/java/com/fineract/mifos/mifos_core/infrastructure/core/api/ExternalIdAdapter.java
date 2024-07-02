@@ -8,6 +8,11 @@ import com.google.gson.JsonSerializer;
 
 import java.lang.reflect.Type;
 
+/**
+ * GSON Serializer for ExternalId
+ *
+ */
+
 public class ExternalIdAdapter implements JsonSerializer<ExternalId> {
 
     @Override

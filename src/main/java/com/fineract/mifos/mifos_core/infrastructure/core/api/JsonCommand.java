@@ -20,6 +20,7 @@ import java.time.format.DateTimeFormatter;
 import java.time.temporal.TemporalAccessor;
 import java.util.*;
 
+import lombok.Getter;
 import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;
 
@@ -37,16 +38,26 @@ public final class JsonCommand {
     private final Long commandId;
     private final Long resourceId;
     private final Long subresourceId;
+    @Getter
     private final Long groupId;
+    @Getter
     private final Long clientId;
+    @Getter
     private final Long loanId;
+    @Getter
     private final Long savingsId;
     private final String entityName;
+    @Getter
     private final String transactionId;
+    @Getter
     private final String url;
+    @Getter
     private final Long productId;
+    @Getter
     private final Long creditBureauId;
+    @Getter
     private final Long organisationCreditBureauId;
+    @Getter
     private final String jobName;
 
     public static JsonCommand from(final String jsonCommand, final JsonElement parsedCommand, final FromJsonHelper fromApiJsonHelper,
@@ -169,14 +180,6 @@ public final class JsonCommand {
 
     }
 
-    public Long getOrganisationCreditBureauId() {
-        return this.organisationCreditBureauId;
-    }
-
-    public Long getCreditBureauId() {
-        return this.creditBureauId;
-    }
-
     public String json() {
         return this.jsonCommand;
     }
@@ -196,6 +199,7 @@ public final class JsonCommand {
         String jsonFragment = null;
         if (this.parsedCommand.getAsJsonObject().has(paramName)) {
             final JsonElement fragment = this.parsedCommand.getAsJsonObject().get(paramName);
+            assert this.fromApiJsonHelper != null;
             jsonFragment = this.fromApiJsonHelper.toJson(fragment);
         }
         return jsonFragment;
@@ -215,38 +219,6 @@ public final class JsonCommand {
 
     public Long subentityId() {
         return this.subresourceId;
-    }
-
-    public Long getGroupId() {
-        return this.groupId;
-    }
-
-    public Long getClientId() {
-        return this.clientId;
-    }
-
-    public Long getLoanId() {
-        return this.loanId;
-    }
-
-    public Long getSavingsId() {
-        return this.savingsId;
-    }
-
-    public String getTransactionId() {
-        return this.transactionId;
-    }
-
-    public String getUrl() {
-        return this.url;
-    }
-
-    public Long getProductId() {
-        return this.productId;
-    }
-
-    public String getJobName() {
-        return this.jobName;
     }
 
     private boolean differenceExists(final TemporalAccessor baseValue, final TemporalAccessor workingCopyValue) {
@@ -276,6 +248,7 @@ public final class JsonCommand {
     }
 
     public boolean parameterExists(final String parameterName) {
+        assert this.fromApiJsonHelper != null;
         return this.fromApiJsonHelper.parameterExists(parameterName, this.parsedCommand);
     }
 
@@ -301,6 +274,7 @@ public final class JsonCommand {
     }
 
     public Long longValueOfParameterNamed(final String parameterName) {
+        assert this.fromApiJsonHelper != null;
         return this.fromApiJsonHelper.extractLongNamed(parameterName, this.parsedCommand);
     }
 
@@ -345,18 +319,22 @@ public final class JsonCommand {
     }
 
     public LocalDate localDateValueOfParameterNamed(final String parameterName) {
+        assert this.fromApiJsonHelper != null;
         return this.fromApiJsonHelper.extractLocalDateNamed(parameterName, this.parsedCommand);
     }
 
     public LocalTime localTimeValueOfParameterNamed(final String parameterName) {
+        assert this.fromApiJsonHelper != null;
         return this.fromApiJsonHelper.extractLocalTimeNamed(parameterName, this.parsedCommand);
     }
 
     public MonthDay extractMonthDayNamed(final String parameterName) {
+        assert this.fromApiJsonHelper != null;
         return this.fromApiJsonHelper.extractMonthDayNamed(parameterName, this.parsedCommand);
     }
 
     public LocalDate dateValueOfParameterNamed(final String parameterName) {
+        assert this.fromApiJsonHelper != null;
         return this.fromApiJsonHelper.extractLocalDateNamed(parameterName, this.parsedCommand);
     }
 
@@ -383,24 +361,26 @@ public final class JsonCommand {
     }
 
     public String stringValueOfParameterNamed(final String parameterName) {
+        assert this.fromApiJsonHelper != null;
         final String value = this.fromApiJsonHelper.extractStringNamed(parameterName, this.parsedCommand);
         return StringUtils.defaultIfEmpty(value, "");
     }
 
     public String stringValueOfParameterNamedAllowingNull(final String parameterName) {
+        assert this.fromApiJsonHelper != null;
         return this.fromApiJsonHelper.extractStringNamed(parameterName, this.parsedCommand);
     }
 
     public Map<String, String> mapValueOfParameterNamed(final String json) {
         final Type typeOfMap = new TypeToken<Map<String, String>>() {}.getType();
-        final Map<String, String> value = this.fromApiJsonHelper.extractDataMap(typeOfMap, json);
-        return value;
+        assert this.fromApiJsonHelper != null;
+        return this.fromApiJsonHelper.extractDataMap(typeOfMap, json);
     }
 
     public Map<String, Object> mapObjectValueOfParameterNamed(final String json) {
         final Type typeOfMap = new TypeToken<Map<String, Object>>() {}.getType();
-        final Map<String, Object> value = this.fromApiJsonHelper.extractObjectMap(typeOfMap, json);
-        return value;
+        assert this.fromApiJsonHelper != null;
+        return this.fromApiJsonHelper.extractObjectMap(typeOfMap, json);
     }
 
     public boolean isChangeInBigDecimalParameterNamedDefaultingZeroToNull(final String parameterName, final BigDecimal existingValue) {
@@ -460,10 +440,12 @@ public final class JsonCommand {
     }
 
     public BigDecimal bigDecimalValueOfParameterNamed(final String parameterName) {
+        assert this.fromApiJsonHelper != null;
         return this.fromApiJsonHelper.extractBigDecimalWithLocaleNamed(parameterName, this.parsedCommand);
     }
 
     public BigDecimal bigDecimalValueOfParameterNamed(final String parameterName, final Locale locale) {
+        assert this.fromApiJsonHelper != null;
         return this.fromApiJsonHelper.extractBigDecimalNamed(parameterName, this.parsedCommand, locale);
     }
 
@@ -512,10 +494,12 @@ public final class JsonCommand {
     }
 
     public Integer integerValueOfParameterNamed(final String parameterName) {
+        assert this.fromApiJsonHelper != null;
         return this.fromApiJsonHelper.extractIntegerWithLocaleNamed(parameterName, this.parsedCommand);
     }
 
     public Integer integerValueOfParameterNamed(final String parameterName, final Locale locale) {
+        assert this.fromApiJsonHelper != null;
         return this.fromApiJsonHelper.extractIntegerNamed(parameterName, this.parsedCommand, locale);
     }
 
@@ -533,6 +517,7 @@ public final class JsonCommand {
     }
 
     public Integer integerValueSansLocaleOfParameterNamed(final String parameterName) {
+        assert this.fromApiJsonHelper != null;
         return this.fromApiJsonHelper.extractIntegerSansLocaleNamed(parameterName, this.parsedCommand);
     }
 
@@ -549,6 +534,7 @@ public final class JsonCommand {
      * Returns {@link Boolean} that could possibly be null.
      */
     public Boolean booleanObjectValueOfParameterNamed(final String parameterName) {
+        assert this.fromApiJsonHelper != null;
         return this.fromApiJsonHelper.extractBooleanNamed(parameterName, this.parsedCommand);
     }
 
@@ -556,6 +542,7 @@ public final class JsonCommand {
      * always returns true or false
      */
     public boolean booleanPrimitiveValueOfParameterNamed(final String parameterName) {
+        assert this.fromApiJsonHelper != null;
         final Boolean value = this.fromApiJsonHelper.extractBooleanNamed(parameterName, this.parsedCommand);
         return ObjectUtils.defaultIfNull(value, Boolean.FALSE);
     }
@@ -570,10 +557,12 @@ public final class JsonCommand {
     }
 
     public String[] arrayValueOfParameterNamed(final String parameterName) {
+        assert this.fromApiJsonHelper != null;
         return this.fromApiJsonHelper.extractArrayNamed(parameterName, this.parsedCommand);
     }
 
     public JsonArray arrayOfParameterNamed(final String parameterName) {
+        assert this.fromApiJsonHelper != null;
         return this.fromApiJsonHelper.extractJsonArrayNamed(parameterName, this.parsedCommand);
     }
 
@@ -607,10 +596,12 @@ public final class JsonCommand {
     }
 
     public Locale extractLocale() {
+        assert this.fromApiJsonHelper != null;
         return this.fromApiJsonHelper.extractLocaleParameter(this.parsedCommand.getAsJsonObject());
     }
 
     public void checkForUnsupportedParameters(final Type typeOfMap, final String json, final Set<String> requestDataParameters) {
+        assert this.fromApiJsonHelper != null;
         this.fromApiJsonHelper.checkForUnsupportedParameters(typeOfMap, json, requestDataParameters);
     }
 
