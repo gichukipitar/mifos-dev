@@ -1,6 +1,7 @@
 package com.fineract.mifos.mifos_core.infrastructure.core.dto;
 
 import com.fineract.mifos.mifos_core.infrastructure.core.data.ApiErrorMessageArg;
+import lombok.Getter;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -8,6 +9,7 @@ import java.time.format.DateTimeFormatterBuilder;
 import java.util.ArrayList;
 import java.util.List;
 
+@Getter
 public final class ApiParameterError {
 
     /**
@@ -84,32 +86,8 @@ public final class ApiParameterError {
         this.args = messageArgs;
     }
 
-    public String getDeveloperMessage() {
-        return this.developerMessage;
-    }
-
-    public String getDefaultUserMessage() {
-        return this.defaultUserMessage;
-    }
-
-    public String getUserMessageGlobalisationCode() {
-        return this.userMessageGlobalisationCode;
-    }
-
-    public String getParameterName() {
-        return this.parameterName;
-    }
-
     public void setParameterName(final String parameterName) {
         this.parameterName = parameterName;
-    }
-
-    public Object getValue() {
-        return this.value;
-    }
-
-    public List<ApiErrorMessageArg> getArgs() {
-        return this.args;
     }
 
     @Override

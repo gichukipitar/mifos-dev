@@ -2,6 +2,7 @@ package com.fineract.mifos.mifos_core.infrastructure.core.data;
 
 import com.fineract.mifos.mifos_core.infrastructure.core.domain.ExternalId;
 import lombok.Data;
+import lombok.Setter;
 
 import java.io.Serializable;
 import java.util.Map;
@@ -24,6 +25,7 @@ public class CommandProcessingResult implements Serializable {
     private final Long productId;
     private final Long gsimId;
     private final Long glimId;
+    @Setter
     private Boolean rollbackTransaction;
     private final ExternalId resourceExternalId;
     private final ExternalId subResourceExternalId;
@@ -134,7 +136,4 @@ public class CommandProcessingResult implements Serializable {
         return this.rollbackTransaction != null && this.rollbackTransaction;
     }
 
-    public void setRollbackTransaction(Boolean rollbackTransaction) {
-        this.rollbackTransaction = rollbackTransaction;
-    }
 }
