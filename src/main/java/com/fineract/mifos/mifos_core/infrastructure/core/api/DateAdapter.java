@@ -9,6 +9,14 @@ import java.lang.reflect.Type;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
+
+/**
+ * GSON Serializer for JUL Dates (java.util.Date) in ISO-8601 format using {@link DateTimeFormatter#ISO_INSTANT} (see
+ * FINERACT-926).
+ *
+ * @author Peter Gichuki
+ */
+
 public class DateAdapter implements JsonSerializer<Date> {
     private static final DateTimeFormatter formatter = DateTimeFormatter.ISO_INSTANT;
     @Override
