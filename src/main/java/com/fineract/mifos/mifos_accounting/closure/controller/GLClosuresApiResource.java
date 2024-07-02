@@ -2,6 +2,7 @@ package com.fineract.mifos.mifos_accounting.closure.controller;
 
 import com.fineract.mifos.mifos_accounting.closure.dto.GLClosureData;
 import com.fineract.mifos.mifos_core.commands.service.PortfolioCommandSourceWritePlatformService;
+import com.fineract.mifos.mifos_core.infrastructure.core.api.ApiRequestParameterHelper;
 import com.fineract.mifos.mifos_core.infrastructure.core.serialization.ApiRequestJsonSerializationSettings;
 import com.fineract.mifos.mifos_core.infrastructure.core.serialization.DefaultToApiJsonSerializer;
 import com.fineract.mifos.mifos_core.infrastructure.security.service.PlatformSecurityContext;
