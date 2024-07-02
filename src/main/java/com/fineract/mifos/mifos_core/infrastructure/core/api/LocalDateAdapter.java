@@ -6,6 +6,11 @@ import java.lang.reflect.Type;
 import java.time.LocalDate;
 import java.time.temporal.ChronoField;
 
+/**
+ * Serializer for Java Local Time {@link LocalDate} that returns the date in array format to match previous Jackson
+ * functionality.
+ */
+
 public class LocalDateAdapter implements JsonSerializer<LocalDate> {
 
     @Override
