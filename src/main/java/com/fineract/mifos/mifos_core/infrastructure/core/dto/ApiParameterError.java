@@ -1,5 +1,7 @@
 package com.fineract.mifos.mifos_core.infrastructure.core.dto;
 
+import com.fineract.mifos.mifos_core.infrastructure.core.data.ApiErrorMessageArg;
+
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeFormatterBuilder;
