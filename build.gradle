@@ -50,7 +50,8 @@ dependencies {
 	implementation 'org.slf4j:slf4j-api:1.7.32'
 	implementation 'ch.qos.logback:logback-classic:1.2.6' // Common binding for SLF4J
 	implementation group: 'org.mapstruct', name: 'mapstruct', version: '1.5.5.Final'
-	implementation group: 'net.fortuna', name: 'ical4j', version: '3.0.0'
+	implementation group: 'org.mnode.ical4j', name: 'ical4j', version: '2.2.0'
+
 	implementation group: 'org.webjars.npm', name: 'rrule', version: '2.7.2'
 
 

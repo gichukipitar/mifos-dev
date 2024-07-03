@@ -19,6 +19,8 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import net.fortuna.ical4j.model.property.RRule;
+
 public class DataValidatorBuilder {
 
     public static final String VALID_INPUT_SEPERATOR = "_";
