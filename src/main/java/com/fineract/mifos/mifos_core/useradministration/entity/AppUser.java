@@ -1,6 +1,6 @@
 package com.fineract.mifos.mifos_core.useradministration.entity;
 
-import com.fineract.mifos.mifos_core.infrastructure.core.domain.AbstractPersistableCustom;
+import com.fineract.mifos.mifos_core.infrastructure.core.entity.AbstractPersistableCustom;
 import com.fineract.mifos.mifos_core.infrastructure.core.service.DateUtils;
 import com.fineract.mifos.mifos_core.infrastructure.security.service.PlatformUser;
 import com.fineract.mifos.mifos_core.organisation.office.entity.Office;

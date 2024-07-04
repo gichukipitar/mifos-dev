@@ -1,6 +1,6 @@
 package com.fineract.mifos.mifos_core.useradministration.entity;
 
-import com.fineract.mifos.mifos_core.infrastructure.core.domain.AbstractPersistableCustom;
+import com.fineract.mifos.mifos_core.infrastructure.core.entity.AbstractPersistableCustom;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;

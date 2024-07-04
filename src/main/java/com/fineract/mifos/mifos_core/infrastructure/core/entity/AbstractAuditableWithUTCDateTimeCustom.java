@@ -1,4 +1,4 @@
-package com.fineract.mifos.mifos_core.infrastructure.core.domain;
+package com.fineract.mifos.mifos_core.infrastructure.core.entity;
 
 import com.fineract.mifos.mifos_core.infrastructure.core.service.DateUtils;
 import jakarta.persistence.Column;
@@ -22,7 +22,8 @@ import static com.fineract.mifos.mifos_core.infrastructure.core.domain.Auditable
  */
 
 @MappedSuperclass
-@Data
+@Getter
+@Setter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public abstract class AbstractAuditableWithUTCDateTimeCustom extends AbstractPersistableCustom
         implements Auditable<Long, Long, OffsetDateTime> {

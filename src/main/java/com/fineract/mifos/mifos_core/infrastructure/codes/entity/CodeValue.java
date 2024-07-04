@@ -2,7 +2,7 @@ package com.fineract.mifos.mifos_core.infrastructure.codes.entity;
 
 import com.fineract.mifos.mifos_core.infrastructure.codes.CodeConstants;
 import com.fineract.mifos.mifos_core.infrastructure.core.api.JsonCommand;
-import com.fineract.mifos.mifos_core.infrastructure.core.domain.AbstractPersistableCustom;
+import com.fineract.mifos.mifos_core.infrastructure.core.entity.AbstractPersistableCustom;
 import com.fineract.mifos.mifos_core.infrastructure.codes.dto.CodeValueData;
 import jakarta.persistence.*;
 import lombok.Getter;

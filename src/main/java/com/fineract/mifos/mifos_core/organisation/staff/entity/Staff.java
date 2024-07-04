@@ -1,6 +1,6 @@
 package com.fineract.mifos.mifos_core.organisation.staff.entity;
 
-import com.fineract.mifos.mifos_core.infrastructure.core.domain.AbstractPersistableCustom;
+import com.fineract.mifos.mifos_core.infrastructure.core.entity.AbstractPersistableCustom;
 import com.fineract.mifos.mifos_core.organisation.office.entity.Office;
 import jakarta.persistence.*;
 import lombok.Data;

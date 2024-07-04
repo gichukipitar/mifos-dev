@@ -2,7 +2,7 @@ package com.fineract.mifos.mifos_core.infrastructure.cache.entity;
 
 
 import com.fineract.mifos.mifos_core.infrastructure.cache.dto.CacheType;
-import com.fineract.mifos.mifos_core.infrastructure.core.domain.AbstractPersistableCustom;
+import com.fineract.mifos.mifos_core.infrastructure.core.entity.AbstractPersistableCustom;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;

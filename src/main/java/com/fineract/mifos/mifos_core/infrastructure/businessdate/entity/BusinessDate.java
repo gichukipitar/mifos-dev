@@ -1,7 +1,7 @@
 package com.fineract.mifos.mifos_core.infrastructure.businessdate.entity;
 
 import com.fineract.mifos.mifos_core.infrastructure.businessdate.dto.BusinessDateType;
-import com.fineract.mifos.mifos_core.infrastructure.core.domain.AbstractAuditableWithUTCDateTimeCustom;
+import com.fineract.mifos.mifos_core.infrastructure.core.entity.AbstractAuditableWithUTCDateTimeCustom;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;

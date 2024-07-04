@@ -4,7 +4,7 @@ import com.fineract.mifos.mifos_core.commands.dtos.CommandProcessingResultType;
 import com.fineract.mifos.mifos_core.commands.dtos.CommandWrapper;
 import com.fineract.mifos.mifos_core.infrastructure.core.api.JsonCommand;
 import com.fineract.mifos.mifos_core.infrastructure.core.data.CommandProcessingResult;
-import com.fineract.mifos.mifos_core.infrastructure.core.domain.AbstractPersistableCustom;
+import com.fineract.mifos.mifos_core.infrastructure.core.entity.AbstractPersistableCustom;
 import com.fineract.mifos.mifos_core.infrastructure.core.domain.ExternalId;
 import com.fineract.mifos.mifos_core.infrastructure.core.service.DateUtils;
 import com.fineract.mifos.mifos_core.useradministration.entity.AppUser;

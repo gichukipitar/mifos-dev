@@ -1,6 +1,5 @@
 package com.fineract.mifos.mifos_core.infrastructure.core.entity;
 
-import com.fineract.mifos.mifos_core.infrastructure.core.domain.AbstractPersistableCustom;
 import jakarta.persistence.Column;
 import jakarta.persistence.MappedSuperclass;
 import org.springframework.data.domain.Auditable;

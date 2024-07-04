@@ -1,7 +1,7 @@
 package com.fineract.mifos.mifos_core.accounting.entity;
 
 import com.fineract.mifos.mifos_core.infrastructure.codes.entity.CodeValue;
-import com.fineract.mifos.mifos_core.infrastructure.core.domain.AbstractPersistableCustom;
+import com.fineract.mifos.mifos_core.infrastructure.core.entity.AbstractPersistableCustom;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
