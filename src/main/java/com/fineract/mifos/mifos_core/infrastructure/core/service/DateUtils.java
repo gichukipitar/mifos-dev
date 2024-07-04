@@ -1,6 +1,7 @@
 package com.fineract.mifos.mifos_core.infrastructure.core.service;
 
 import com.fineract.mifos.mifos_core.infrastructure.core.dto.ApiParameterError;
+import com.fineract.mifos.mifos_core.infrastructure.core.dto.FineractPlatformTenant;
 import com.fineract.mifos.mifos_core.infrastructure.core.exception.PlatformApiDataValidationException;
 import org.antlr.v4.runtime.misc.NotNull;
 
