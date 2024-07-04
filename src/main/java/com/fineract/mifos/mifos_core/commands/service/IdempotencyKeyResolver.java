@@ -1,6 +1,7 @@
 package com.fineract.mifos.mifos_core.commands.service;
 
 import com.fineract.mifos.mifos_core.commands.dtos.CommandWrapper;
+import com.fineract.mifos.mifos_core.infrastructure.core.dto.FineractRequestContextHolder;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
