@@ -11,7 +11,7 @@ import org.springframework.data.jpa.domain.AbstractAuditable;
 import java.time.OffsetDateTime;
 import java.util.Optional;
 
-import static com.fineract.mifos.mifos_core.infrastructure.core.domain.AuditableFieldsConstants.*;
+import static com.fineract.mifos.mifos_core.infrastructure.core.dto.AuditableFieldsConstants.*;
 
 /**
  * A custom copy of {@link AbstractAuditable} to override the column names used on database. It also uses OffsetDateTime

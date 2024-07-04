@@ -1,4 +1,4 @@
-package com.fineract.mifos.mifos_core.infrastructure.core.domain;
+package com.fineract.mifos.mifos_core.infrastructure.core.dto;
 
 public final class AuditableFieldsConstants {
 
