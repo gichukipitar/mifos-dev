@@ -12,6 +12,7 @@ import com.fineract.mifos.mifos_core.infrastructure.core.data.CommandProcessingR
 import com.fineract.mifos.mifos_core.infrastructure.core.domain.BatchRequestContextHolder;
 import com.fineract.mifos.mifos_core.infrastructure.core.dto.FineractRequestContextHolder;
 import com.fineract.mifos.mifos_core.infrastructure.core.exception.ErrorHandler;
+import com.fineract.mifos.mifos_core.infrastructure.core.exception.IdempotentCommandProcessFailedException;
 import com.fineract.mifos.mifos_core.infrastructure.core.exception.PlatformApiDataValidationException;
 import com.fineract.mifos.mifos_core.infrastructure.core.serialization.GoogleGsonSerializerHelper;
 import com.fineract.mifos.mifos_core.infrastructure.core.serialization.ToApiJsonSerializer;

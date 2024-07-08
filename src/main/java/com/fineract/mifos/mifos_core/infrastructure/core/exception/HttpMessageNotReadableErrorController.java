@@ -8,7 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Scope;
 import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.stereotype.Component;
-
+import com.fineract.mifos.mifos_core.infrastructure.core.dto.ApiParameterError;
 @Provider
 @Component
 @Scope("singleton")
