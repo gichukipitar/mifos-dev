@@ -6,9 +6,14 @@ import com.fineract.mifos.mifos_core.infrastructure.core.dto.ApiParameterError;
 import com.fineract.mifos.mifos_core.infrastructure.core.serialization.GoogleGsonSerializerHelper;
 import com.google.gson.Gson;
 import jakarta.persistence.PersistenceException;
+import jakarta.ws.rs.core.MultivaluedMap;
+import jakarta.ws.rs.core.Response;
+import jakarta.ws.rs.ext.ExceptionMapper;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import net.fortuna.ical4j.validate.ValidationException;
 import org.antlr.v4.runtime.misc.NotNull;
+import org.apache.commons.collections4.SetUtils;
 import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
@@ -19,9 +24,6 @@ import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Component;
 
 import javax.naming.AuthenticationException;
-import javax.ws.rs.core.MultivaluedMap;
-import javax.ws.rs.core.Response;
-import javax.ws.rs.ext.ExceptionMapper;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.util.Arrays;
@@ -93,24 +95,24 @@ public final class ErrorHandler {
     private final DefaultExceptionMapper defaultExceptionMapper;
 
     @NotNull
-    public <T extends RuntimeException> ExceptionMapper<T> findMostSpecificExceptionHandler(T exception) {
+    public <T extends RuntimeException> jakarta.ws.rs.ext.ExceptionMapper<T> findMostSpecificExceptionHandler(T exception) {
         Class<?> clazz = exception.getClass();
         do {
-            Set<String> exceptionMappers = createSet(ctx.getBeanNamesForType(forClassWithGenerics(ExceptionMapper.class, clazz)));
+            Set<String> exceptionMappers = createSet(ctx.getBeanNamesForType(forClassWithGenerics(jakarta.ws.rs.ext.ExceptionMapper.class, clazz)));
             Set<String> fineractErrorMappers = createSet(ctx.getBeanNamesForType(FineractExceptionMapper.class));
             SetUtils.SetView<String> intersection = SetUtils.intersection(exceptionMappers, fineractErrorMappers);
             if (!intersection.isEmpty()) {
                 // noinspection unchecked
-                return (ExceptionMapper<T>) ctx.getBean(intersection.iterator().next());
+                return (jakarta.ws.rs.ext.ExceptionMapper<T>) ctx.getBean(intersection.iterator().next());
             }
             if (!exceptionMappers.isEmpty()) {
                 // noinspection unchecked
-                return (ExceptionMapper<T>) ctx.getBean(exceptionMappers.iterator().next());
+                return (jakarta.ws.rs.ext.ExceptionMapper<T>) ctx.getBean(exceptionMappers.iterator().next());
             }
             clazz = clazz.getSuperclass();
         } while (!clazz.equals(Exception.class));
         // noinspection unchecked
-        return (ExceptionMapper<T>) defaultExceptionMapper;
+        return (jakarta.ws.rs.ext.ExceptionMapper<T>) defaultExceptionMapper;
     }
 
     /**
