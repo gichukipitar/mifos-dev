@@ -2,7 +2,7 @@ package com.fineract.mifos.mifos_core.infrastructure.core.exception;
 
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import lombok.extern.slf4j.Slf4j;
-
+import com.google.common.io.CharStreams;
 import java.io.PrintStream;
 import java.io.PrintWriter;
 import java.io.Writer;
@@ -25,7 +25,7 @@ import java.util.List;
  * </p>
  * .
  *
- * @author Michael Vorburger.ch <mike@vorburger.ch>
+ * @author Peter Gichuki
  */
 @Slf4j
 public class MultiException extends Exception {
