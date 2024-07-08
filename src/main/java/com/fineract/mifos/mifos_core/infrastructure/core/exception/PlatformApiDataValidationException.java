@@ -1,14 +1,16 @@
 package com.fineract.mifos.mifos_core.infrastructure.core.exception;
 
 import com.fineract.mifos.mifos_core.infrastructure.core.dto.ApiParameterError;
+import lombok.Getter;
 
 import java.util.List;
 
+@Getter
 public class PlatformApiDataValidationException extends AbstractPlatformException{
     private final List<ApiParameterError> errors;
 
     /**
-     * Constructor. Consider simply using {@link DataValidatorBuilder#throwValidationErrors()} directly.
+     * Constructor. Consider simply using {@link #()} directly.
      *
      * @param errors
      *            list of {@link ApiParameterError} to throw
@@ -32,10 +34,6 @@ public class PlatformApiDataValidationException extends AbstractPlatformExceptio
                                               Throwable cause) {
         super(globalisationMessageCode, defaultUserMessage, cause);
         this.errors = errors;
-    }
-
-    public List<ApiParameterError> getErrors() {
-        return this.errors;
     }
 
     @Override
