@@ -1,5 +1,6 @@
 package com.fineract.mifos.mifos_core.infrastructure.core.exception;
 
+import com.fineract.mifos.mifos_core.infrastructure.core.exceptionmapper.FineractExceptionMapper;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.ext.ExceptionMapper;
@@ -13,7 +14,7 @@ import com.fineract.mifos.mifos_core.infrastructure.core.dto.ApiParameterError;
 @Component
 @Scope("singleton")
 @Slf4j
-public class HttpMessageNotReadableErrorController implements ExceptionMapper<HttpMessageNotReadableException>, FineractExceptionMapper{
+public class HttpMessageNotReadableErrorController implements ExceptionMapper<HttpMessageNotReadableException>, FineractExceptionMapper {
 
     @Override
     public Response toResponse(HttpMessageNotReadableException exception) {

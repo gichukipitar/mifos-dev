@@ -3,6 +3,8 @@ package com.fineract.mifos.mifos_core.infrastructure.core.exception;
 import com.fineract.mifos.mifos_core.batch.dtos.Header;
 import com.fineract.mifos.mifos_core.batch.exception.ErrorInfo;
 import com.fineract.mifos.mifos_core.infrastructure.core.dto.ApiParameterError;
+import com.fineract.mifos.mifos_core.infrastructure.core.exceptionmapper.DefaultExceptionMapper;
+import com.fineract.mifos.mifos_core.infrastructure.core.exceptionmapper.FineractExceptionMapper;
 import com.fineract.mifos.mifos_core.infrastructure.core.serialization.GoogleGsonSerializerHelper;
 import com.google.gson.Gson;
 import jakarta.persistence.PersistenceException;
