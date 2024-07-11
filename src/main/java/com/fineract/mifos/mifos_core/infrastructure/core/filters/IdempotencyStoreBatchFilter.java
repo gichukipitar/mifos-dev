@@ -5,10 +5,10 @@ import com.fineract.mifos.mifos_core.batch.dtos.BatchResponse;
 import com.fineract.mifos.mifos_core.commands.service.SynchronousCommandProcessingService;
 import com.fineract.mifos.mifos_core.infrastructure.core.config.FineractProperties;
 import com.fineract.mifos.mifos_core.infrastructure.core.dto.FineractRequestContextHolder;
-import jakarta.ws.rs.core.UriInfo;
+import javax.ws.rs.core.UriInfo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
-
+import com.fineract.mifos.mifos_core.batch.dtos.Header;
 import java.util.Optional;
 
 @Component
