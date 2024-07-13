@@ -1,5 +1,6 @@
 package com.fineract.mifos.mifos_core.infrastructure.core.api;
 
+import com.fineract.mifos.mifos_core.infrastructure.core.serialization.JsonParserHelper;
 import org.apache.commons.lang3.StringUtils;
 
 import javax.ws.rs.core.MultivaluedMap;

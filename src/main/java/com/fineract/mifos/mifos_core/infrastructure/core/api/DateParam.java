@@ -1,6 +1,8 @@
 package com.fineract.mifos.mifos_core.infrastructure.core.api;
 
 
+import com.fineract.mifos.mifos_core.infrastructure.core.serialization.JsonParserHelper;
+
 import java.text.DateFormat;
 import java.time.LocalDate;
 import java.util.Locale;
@@ -18,7 +20,7 @@ public class DateParam {
 
     public LocalDate getDate(final String parameterName, final DateFormat dateFormat, final String localeAsString) {
         final Locale locale = JsonParserHelper.localeFromString(localeAsString);
-        return JsonParserHelper.convertFrom(this.dateAsString, parameterName, dateFormat, locale);
+        return JsonParserHelper.convertFrom(this.dateAsString, parameterName, dateFormat.toString(), locale);
     }
 
 }

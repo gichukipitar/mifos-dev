@@ -4,6 +4,7 @@ import com.fineract.mifos.mifos_core.infrastructure.core.exception.InvalidJsonEx
 import com.fineract.mifos.mifos_core.infrastructure.core.exception.UnsupportedParameterException;
 import com.google.gson.*;
 import io.micrometer.common.util.StringUtils;
+import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
@@ -22,6 +23,7 @@ import java.util.*;
 @Component
 public class FromJsonHelper {
 
+    @Getter
     private final Gson gsonConverter;
     private final JsonParserHelper helperDelegator;
 
@@ -273,10 +275,6 @@ public class FromJsonHelper {
 
     public JsonObject extractJsonObjectNamed(final String parameterName, final JsonElement element) {
         return this.helperDelegator.extractJsonObjectNamed(parameterName, element);
-    }
-
-    public Gson getGsonConverter() {
-        return this.gsonConverter;
     }
 
 }
