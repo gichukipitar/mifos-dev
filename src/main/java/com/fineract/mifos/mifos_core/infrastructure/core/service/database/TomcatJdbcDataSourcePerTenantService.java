@@ -2,6 +2,7 @@ package com.fineract.mifos.mifos_core.infrastructure.core.service.database;
 
 import com.fineract.mifos.mifos_core.infrastructure.core.dto.FineractPlatformTenant;
 import com.fineract.mifos.mifos_core.infrastructure.core.dto.FineractPlatformTenantConnection;
+import com.fineract.mifos.mifos_core.infrastructure.core.service.tenant.TenantDetailsService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
