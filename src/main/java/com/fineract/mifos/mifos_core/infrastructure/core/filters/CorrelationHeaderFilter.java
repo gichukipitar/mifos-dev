@@ -1,6 +1,7 @@
 package com.fineract.mifos.mifos_core.infrastructure.core.filters;
 
 import com.fineract.mifos.mifos_core.infrastructure.core.config.FineractProperties;
+import com.fineract.mifos.mifos_core.infrastructure.core.service.MDCWrapper;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
