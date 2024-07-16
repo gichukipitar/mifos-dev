@@ -1,5 +1,6 @@
 package com.fineract.mifos.mifos_core.infrastructure.dataqueries.dto;
 
+import com.fineract.mifos.mifos_core.infrastructure.core.service.database.DatabaseType;
 import com.fineract.mifos.mifos_core.infrastructure.core.service.database.JdbcJavaType;
 import org.antlr.v4.runtime.misc.NotNull;
 

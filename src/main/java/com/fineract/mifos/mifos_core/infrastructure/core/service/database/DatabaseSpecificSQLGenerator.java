@@ -1,6 +1,7 @@
 package com.fineract.mifos.mifos_core.infrastructure.core.service.database;
 
 import com.fineract.mifos.mifos_core.infrastructure.core.service.DateUtils;
+import com.fineract.mifos.mifos_core.infrastructure.dataqueries.dto.ResultsetColumnHeaderData;
 import org.antlr.v4.runtime.misc.NotNull;
 import org.apache.logging.log4j.util.Strings;
 import org.springframework.beans.factory.annotation.Autowired;
