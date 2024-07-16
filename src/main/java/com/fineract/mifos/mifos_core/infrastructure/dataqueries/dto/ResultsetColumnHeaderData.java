@@ -1,7 +1,9 @@
 package com.fineract.mifos.mifos_core.infrastructure.dataqueries.dto;
 
+import com.fineract.mifos.mifos_core.infrastructure.core.exception.PlatformDataIntegrityException;
 import com.fineract.mifos.mifos_core.infrastructure.core.service.database.DatabaseType;
 import com.fineract.mifos.mifos_core.infrastructure.core.service.database.JdbcJavaType;
+import lombok.Getter;
 import org.antlr.v4.runtime.misc.NotNull;
 
 import java.io.Serializable;
@@ -11,18 +13,25 @@ import java.util.List;
 /**
  * Immutable data object representing a resultset column.
  */
+@Getter
 public final class ResultsetColumnHeaderData implements Serializable {
 
+
     private final String columnName;
+    @Getter
     private JdbcJavaType columnType;
+    @Getter
     private final Long columnLength;
+
     private final DisplayType columnDisplayType;
     private final boolean isColumnNullable;
     private final boolean isColumnPrimaryKey;
     private final boolean isColumnUnique;
     private final boolean isColumnIndexed;
 
+
     private final List<ResultsetColumnValueData> columnValues;
+
     private final String columnCode;
 
     public static ResultsetColumnHeaderData basic(final String columnName, final String columnType, DatabaseType dialect) {
@@ -62,20 +71,8 @@ public final class ResultsetColumnHeaderData implements Serializable {
         this.columnDisplayType = calcDisplayType();
     }
 
-    public String getColumnName() {
-        return this.columnName;
-    }
-
     public boolean isNamed(final String columnName) {
         return this.columnName.equalsIgnoreCase(columnName);
-    }
-
-    public JdbcJavaType getColumnType() {
-        return this.columnType;
-    }
-
-    public Long getColumnLength() {
-        return this.columnLength;
     }
 
     public boolean getIsColumnNullable() {
@@ -92,18 +89,6 @@ public final class ResultsetColumnHeaderData implements Serializable {
 
     public boolean getIsColumnIndexed() {
         return isColumnIndexed;
-    }
-
-    public DisplayType getColumnDisplayType() {
-        return this.columnDisplayType;
-    }
-
-    public String getColumnCode() {
-        return this.columnCode;
-    }
-
-    public List<ResultsetColumnValueData> getColumnValues() {
-        return this.columnValues;
     }
 
     public boolean isDateDisplayType() {

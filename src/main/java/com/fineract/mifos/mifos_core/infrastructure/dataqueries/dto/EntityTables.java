@@ -9,6 +9,8 @@ import java.util.Map;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
+import static com.fineract.mifos.mifos_core.infrastructure.dataqueries.dto.StatusEnum.*;
+
 public enum EntityTables {
 
     CLIENT("m_client", "client_id", "id", CREATE, ACTIVATE, CLOSE), //

@@ -1,5 +1,6 @@
 package com.fineract.mifos.mifos_core.infrastructure.dataqueries.dto;
 
+import com.fineract.mifos.mifos_core.infrastructure.core.dto.EnumOptionData;
 import lombok.Getter;
 
 import java.util.ArrayList;
