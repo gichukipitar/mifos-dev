@@ -2,6 +2,8 @@ package com.fineract.mifos.mifos_core.infrastructure.bulkimport.service;
 
 import com.fineract.mifos.mifos_core.infrastructure.bulkimport.dto.GlobalEntityType;
 import com.fineract.mifos.mifos_core.infrastructure.bulkimport.dto.ImportData;
+import com.fineract.mifos.mifos_core.infrastructure.documentmanagement.DocumentData;
+import org.glassfish.jersey.media.multipart.FormDataContentDisposition;
 
 import javax.ws.rs.core.Response;
 import java.io.InputStream;
