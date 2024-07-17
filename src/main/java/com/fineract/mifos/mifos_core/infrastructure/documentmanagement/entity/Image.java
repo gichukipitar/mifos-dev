@@ -4,10 +4,14 @@ import com.fineract.mifos.mifos_core.infrastructure.core.entity.AbstractPersista
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.Setter;
 
+@Setter
+@Getter
 @Entity
 @Table(name = "m_image")
-public final class Image extends AbstractPersistableCustom {
+public class Image extends AbstractPersistableCustom {
 
     @Column(name = "location", length = 500)
     private String location;
@@ -20,24 +24,8 @@ public final class Image extends AbstractPersistableCustom {
         this.storageType = storageType.getValue();
     }
 
-    Image() {
+    public Image() {
 
-    }
-
-    public String getLocation() {
-        return this.location;
-    }
-
-    public Integer getStorageType() {
-        return this.storageType;
-    }
-
-    public void setLocation(final String location) {
-        this.location = location;
-    }
-
-    public void setStorageType(final Integer storageType) {
-        this.storageType = storageType;
     }
 
 }

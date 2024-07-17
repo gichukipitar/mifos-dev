@@ -1,5 +1,6 @@
 package com.fineract.mifos.mifos_core.infrastructure.documentmanagement;
 
+import com.fineract.mifos.mifos_core.infrastructure.documentmanagement.entity.StorageType;
 import lombok.Getter;
 
 /**
