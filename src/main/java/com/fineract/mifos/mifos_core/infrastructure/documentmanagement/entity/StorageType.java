@@ -26,7 +26,6 @@ public enum StorageType {
     }
 
     public static StorageType fromInt(final int i) {
-        final StorageType type = intToEnumMap.get(Integer.valueOf(i));
-        return type;
+        return intToEnumMap.get(i);
     }
 }
