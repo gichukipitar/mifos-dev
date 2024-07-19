@@ -51,11 +51,7 @@ public class BusinessEventNotifierServiceImpl implements BusinessEventNotifierSe
 
     @Override
     public <T extends BusinessEvent<?>> void addPreBusinessEventListener(Class<T> eventType, BusinessEventListener<T> listener) {
-        List<BusinessEventListener> businessEventListeners = preListeners.get(eventType);
-        if (businessEventListeners == null) {
-            businessEventListeners = new ArrayList<>();
-            preListeners.put(eventType, businessEventListeners);
-        }
+        List<BusinessEventListener> businessEventListeners = preListeners.computeIfAbsent(eventType, k -> new ArrayList<>());
         businessEventListeners.add(listener);
     }
 
