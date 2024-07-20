@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
+import com.fineract.mifos.mifos_core.infrastructure.core.boot.FineractProfiles;
 import java.util.List;
 
 @Profile(FineractProfiles.TEST)
