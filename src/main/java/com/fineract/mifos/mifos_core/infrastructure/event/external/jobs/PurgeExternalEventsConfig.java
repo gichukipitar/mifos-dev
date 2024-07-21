@@ -24,12 +24,12 @@ public class PurgeExternalEventsConfig {
 
     @Bean
     protected Step purgeExternalEventsStep() {
-        return new StepBuilder(JobName.PURGE_EXTERNAL_EVENTS.name(), jobRepository).tasklet(tasklet, transactionManager).build();
+        return new StepBuilder(JobName.PURGE_EXTERNAL_EVENTS.name()).tasklet(tasklet).build();
     }
 
     @Bean
     public Job purgeExternalEventsJob() {
-        return new JobBuilder(JobName.PURGE_EXTERNAL_EVENTS.name(), jobRepository).start(purgeExternalEventsStep())
+        return new JobBuilder(JobName.PURGE_EXTERNAL_EVENTS.name()).start(purgeExternalEventsStep())
                 .incrementer(new RunIdIncrementer()).build();
     }
 }
