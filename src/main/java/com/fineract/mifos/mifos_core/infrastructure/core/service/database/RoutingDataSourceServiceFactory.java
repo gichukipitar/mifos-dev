@@ -1,5 +1,6 @@
 package com.fineract.mifos.mifos_core.infrastructure.core.service.database;
 
+import com.fineract.mifos.mifos_core.infrastructure.core.service.ThreadLocalContextUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;

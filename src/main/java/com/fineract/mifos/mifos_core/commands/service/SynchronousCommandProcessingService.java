@@ -17,6 +17,7 @@ import com.fineract.mifos.mifos_core.infrastructure.core.exception.IdempotentCom
 import com.fineract.mifos.mifos_core.infrastructure.core.exception.PlatformApiDataValidationException;
 import com.fineract.mifos.mifos_core.infrastructure.core.serialization.GoogleGsonSerializerHelper;
 import com.fineract.mifos.mifos_core.infrastructure.core.serialization.ToApiJsonSerializer;
+import com.fineract.mifos.mifos_core.infrastructure.core.service.ThreadLocalContextUtil;
 import com.fineract.mifos.mifos_core.infrastructure.security.service.PlatformSecurityContext;
 import com.fineract.mifos.mifos_core.useradministration.entity.AppUser;
 import com.google.gson.Gson;
