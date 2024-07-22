@@ -5,6 +5,7 @@ import com.fineract.mifos.mifos_core.infrastructure.event.business.BusinessEvent
 import com.fineract.mifos.mifos_core.infrastructure.event.business.dto.BulkBusinessEvent;
 import com.fineract.mifos.mifos_core.infrastructure.event.business.dto.BusinessEvent;
 import com.fineract.mifos.mifos_core.infrastructure.event.business.dto.NoExternalEvent;
+import com.fineract.mifos.mifos_core.infrastructure.event.external.repository.ExternalEventConfigurationRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.InitializingBean;
