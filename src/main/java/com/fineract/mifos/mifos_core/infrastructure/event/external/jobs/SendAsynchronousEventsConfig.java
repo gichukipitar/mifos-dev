@@ -25,7 +25,7 @@ public class SendAsynchronousEventsConfig {
 
     @Bean
     protected Step sendAsynchronousEventsStep() {
-        return new StepBuilder(StepName.SEND_ASYNCHRONOUS_EVENTS_STEP.name()).tasklet(tasklet, transactionManager).build();
+        return new StepBuilder(StepName.SEND_ASYNCHRONOUS_EVENTS_STEP.name()).tasklet(tasklet).build();
     }
 
     @Bean
