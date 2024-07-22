@@ -1,5 +1,7 @@
 package com.fineract.mifos.mifos_core.infrastructure.event.external.jobs;
 
+import com.fineract.mifos.mifos_core.infrastructure.event.external.entity.ExternalEventStatus;
+import com.fineract.mifos.mifos_core.infrastructure.event.external.repository.ExternalEventRepository;
 import com.fineract.mifos.mifos_core.infrastructure.configuration.service.ConfigurationDomainService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

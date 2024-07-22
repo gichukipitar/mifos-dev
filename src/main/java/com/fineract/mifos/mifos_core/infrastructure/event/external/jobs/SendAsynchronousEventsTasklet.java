@@ -25,6 +25,7 @@ import java.util.List;
 import java.util.Map;
 
 import static com.fineract.mifos.mifos_core.infrastructure.core.diagnostics.MeasuringUtil.measure;
+import com.fineract.mifos.mifos_core.infrastructure.event.external.repository.ExternalEventRepository;
 import static java.util.stream.Collectors.groupingBy;
 import static java.util.stream.Collectors.toMap;
 
