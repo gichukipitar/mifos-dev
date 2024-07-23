@@ -4,6 +4,7 @@ import com.fineract.mifos.mifos_core.commands.annotation.CommandType;
 import com.fineract.mifos.mifos_core.commands.handler.NewCommandSourceHandler;
 import com.fineract.mifos.mifos_core.infrastructure.core.api.JsonCommand;
 import com.fineract.mifos.mifos_core.infrastructure.core.data.CommandProcessingResult;
+import com.fineract.mifos.mifos_core.infrastructure.event.external.service.ExternalEventConfigurationWritePlatformService;
 import lombok.RequiredArgsConstructor;
 import org.antlr.v4.runtime.misc.NotNull;
 import org.springframework.stereotype.Service;
