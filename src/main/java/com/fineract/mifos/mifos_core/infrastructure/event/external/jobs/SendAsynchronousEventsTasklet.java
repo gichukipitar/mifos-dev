@@ -6,6 +6,7 @@ import com.fineract.mifos.mifos_core.infrastructure.core.service.DateUtils;
 import com.fineract.mifos.mifos_core.infrastructure.event.external.entity.ExternalEventStatus;
 import com.fineract.mifos.mifos_core.infrastructure.event.external.entity.ExternalEventView;
 import com.fineract.mifos.mifos_core.infrastructure.event.external.producer.ExternalEventProducer;
+import com.fineract.mifos.mifos_core.infrastructure.event.external.service.messages.MessageFactory;
 import com.google.common.collect.Lists;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
