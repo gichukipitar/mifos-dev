@@ -6,6 +6,7 @@ import com.fineract.mifos.mifos_core.infrastructure.event.business.dto.BusinessE
 import com.fineract.mifos.mifos_core.infrastructure.event.external.entity.ExternalEvent;
 import com.fineract.mifos.mifos_core.infrastructure.event.external.repository.ExternalEventRepository;
 import com.fineract.mifos.mifos_core.infrastructure.event.external.service.idempotency.ExternalEventIdempotencyKeyGenerator;
+import com.fineract.mifos.mifos_core.infrastructure.event.external.service.messages.BulkMessageItemFactory;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import lombok.RequiredArgsConstructor;
