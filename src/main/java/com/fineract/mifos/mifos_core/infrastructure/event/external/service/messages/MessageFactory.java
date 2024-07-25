@@ -1,6 +1,7 @@
 package com.fineract.mifos.mifos_core.infrastructure.event.external.service.messages;
 
 import com.fineract.mifos.mifos_core.infrastructure.event.external.service.messages.dto.*;
+import com.fineract.mifos.mifos_core.infrastructure.event.external.entity.ExternalEventView;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.InitializingBean;
