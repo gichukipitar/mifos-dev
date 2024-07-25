@@ -3,6 +3,7 @@ package com.fineract.mifos.mifos_core.infrastructure.event.external.service.mess
 import com.fineract.mifos.mifos_core.infrastructure.event.external.service.messages.dto.MessageBusinessDate;
 import com.fineract.mifos.mifos_core.infrastructure.event.external.service.messages.dto.MessageCategory;
 import com.fineract.mifos.mifos_core.infrastructure.event.external.service.messages.dto.MessageCreatedAt;
+import com.fineract.mifos.mifos_core.infrastructure.event.external.service.messages.dto.MessageData;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.InitializingBean;
