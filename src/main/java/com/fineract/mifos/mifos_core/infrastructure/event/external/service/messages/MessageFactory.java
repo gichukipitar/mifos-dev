@@ -1,6 +1,7 @@
 package com.fineract.mifos.mifos_core.infrastructure.event.external.service.messages;
 
 import com.fineract.mifos.mifos_core.infrastructure.event.external.service.messages.dto.MessageBusinessDate;
+import com.fineract.mifos.mifos_core.infrastructure.event.external.service.messages.dto.MessageCategory;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.InitializingBean;
